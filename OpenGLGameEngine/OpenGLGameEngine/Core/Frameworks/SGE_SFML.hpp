@@ -8,6 +8,10 @@
 
 #pragma once
 
+#include "DEFINITIONS.h"
+
+#ifdef SGE__SFML
+
 #include "FrameworkInterface.h"
 
 #include <SFML/window.hpp>
@@ -31,3 +35,5 @@ namespace SonarGameEngine
         sf::Window *window;
     };
 }
+
+#endif

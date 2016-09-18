@@ -8,6 +8,10 @@
 
 #pragma once
 
+#include "DEFINITIONS.h"
+
+#ifdef SGE__SDL
+
 #include "FrameworkInterface.h"
 
 #include <SDL2/SDL.h>
@@ -34,3 +38,5 @@ namespace SonarGameEngine
         SDL_Event windowEvent;
     };
 }
+
+#endif

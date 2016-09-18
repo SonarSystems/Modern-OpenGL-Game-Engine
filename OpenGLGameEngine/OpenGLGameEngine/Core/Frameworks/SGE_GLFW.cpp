@@ -8,6 +8,8 @@
 
 #include "SGE_GLFW.hpp"
 
+#ifdef SGE__GLFW
+
 #include <iostream>
 
 namespace SonarGameEngine
@@ -23,6 +25,8 @@ namespace SonarGameEngine
         glfwInit( );
         
         // Set all the required options for GLFW
+        glfwWindowHint( GLFW_DEPTH_BITS, 24 );
+        glfwWindowHint( GLFW_STENCIL_BITS, 8 );
         glfwWindowHint( GLFW_CONTEXT_VERSION_MAJOR, 3 );
         glfwWindowHint( GLFW_CONTEXT_VERSION_MINOR, 3 );
         glfwWindowHint( GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE );
@@ -63,3 +67,4 @@ namespace SonarGameEngine
         glfwTerminate( );
     }
 }
+#endif

@@ -8,6 +8,8 @@
 
 #include "SGE_SDL.hpp"
 
+#ifdef SGE__SDL
+
 namespace SonarGameEngine
 {
     SGE_SDL::SGE_SDL( )
@@ -23,6 +25,7 @@ namespace SonarGameEngine
         SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, 3 );
         SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, 3 );
         SDL_GL_SetAttribute( SDL_GL_STENCIL_SIZE, 8 );
+        SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, 24 );
         
         this->window = SDL_CreateWindow( "SDL", 0, 0, 800, 640, SDL_WINDOW_OPENGL );
         
@@ -54,3 +57,5 @@ namespace SonarGameEngine
         SDL_Quit( );
     }
 }
+
+#endif

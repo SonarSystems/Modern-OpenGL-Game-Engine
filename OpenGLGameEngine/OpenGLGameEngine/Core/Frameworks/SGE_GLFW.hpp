@@ -8,6 +8,10 @@
 
 #pragma once
 
+#include "DEFINITIONS.h"
+
+#ifdef SGE__GLFW
+
 #include "FrameworkInterface.h"
 
 #include <GLFW/glfw3.h>
@@ -31,3 +35,4 @@ namespace SonarGameEngine
         GLFWwindow *window;
     };
 }
+#endif

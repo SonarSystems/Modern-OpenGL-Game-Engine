@@ -8,6 +8,8 @@
 
 #include "SGE_SFML.hpp"
 
+#ifdef SGE__SFML
+
 namespace SonarGameEngine
 {
     SGE_SFML::SGE_SFML( )
@@ -55,3 +57,5 @@ namespace SonarGameEngine
         this->window->close( );
     }
 }
+
+#endif
