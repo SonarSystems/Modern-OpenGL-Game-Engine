@@ -1,0 +1,1 @@
+-Methods and variables for Width, Height and anything else generic in the framework such as OpenGL version.
