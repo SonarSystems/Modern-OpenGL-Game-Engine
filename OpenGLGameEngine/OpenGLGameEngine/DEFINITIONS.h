@@ -6,11 +6,8 @@
 //  Copyright © 2016 Sonar Systems. All rights reserved.
 //
 
-#ifndef DEFINITIONS_h
-#define DEFINITIONS_h
+#pragma once
 
-//#define SGE__SDL
-#define SGE__SFML
-//#define SGE__GLFW
-
-#endif /* DEFINITIONS_h */
+//#define SGE__SDL 1
+//#define SGE__SFML 2
+#define SGE__GLFW 3

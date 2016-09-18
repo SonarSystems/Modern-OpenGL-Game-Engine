@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "CoreEngine.hpp"
+#include "Core/CoreEngine.hpp"
 
 using namespace SonarGameEngine;
 
