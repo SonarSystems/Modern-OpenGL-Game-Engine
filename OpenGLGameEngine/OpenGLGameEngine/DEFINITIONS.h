@@ -8,6 +8,5 @@
 
 #pragma once
 
-//#define SGE__SDL 1
-//#define SGE__SFML 2
-#define SGE__GLFW 3
+// SGE__SDL, SGE__SFML, SGE_GLFW
+#define SGE__SDL

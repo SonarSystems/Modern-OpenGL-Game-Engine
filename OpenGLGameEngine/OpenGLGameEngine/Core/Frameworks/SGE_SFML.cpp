@@ -10,6 +10,8 @@
 
 #ifdef SGE__SFML
 
+#include <iostream>
+
 namespace SonarGameEngine
 {
     SGE_SFML::SGE_SFML( )
@@ -26,7 +28,7 @@ namespace SonarGameEngine
         settings.minorVersion = 3;
         settings.attributeFlags = sf::ContextSettings::Core;
         
-        this->window = new sf::Window::Window( sf::VideoMode( 800, 600, 32 ), "SFML", sf::Style::Titlebar | sf::Style::Close, settings );
+        this->window = new sf::Window::Window( sf::VideoMode( this->GetWindowSize( )[0], this->GetWindowSize( )[1], 32 ), "SFML", sf::Style::Titlebar | sf::Style::Close, settings );        
     }
     
     bool SGE_SFML::PollEvents( )

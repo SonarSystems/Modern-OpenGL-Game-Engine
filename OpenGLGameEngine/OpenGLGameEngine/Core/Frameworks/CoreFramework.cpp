@@ -12,52 +12,33 @@ namespace SonarGameEngine
 {
     CoreFramework::CoreFramework( )
     {
-        
+        frameworkObject.Construct( );
     }
     
     void CoreFramework::Init( )
     {
-#ifdef SGE__SDL
-        sdlObject.Init( );
-#elif defined(SGE__SFML)
-        sfmlObject.Init( );
-#elif defined(SGE__GLFW)
-        glfwObject.Init( );
-#endif
+        frameworkObject.Init( );
     }
     
     bool CoreFramework::PollEvents( )
     {
-#ifdef SGE__SDL
-        return sdlObject.PollEvents( );
-#elif defined(SGE__SFML)
-        return sfmlObject.PollEvents( );
-#elif defined(SGE__GLFW)
-        return glfwObject.PollEvents( );
-#endif
+        return frameworkObject.PollEvents( );
         
         return true;
     }
     
     void CoreFramework::SwapBuffers( )
     {
-#ifdef SGE__SDL
-        sdlObject.SwapBuffers( );
-#elif defined(SGE__SFML)
-        sfmlObject.SwapBuffers( );
-#elif defined(SGE__GLFW)
-        glfwObject.SwapBuffers( );
-#endif
+        frameworkObject.SwapBuffers( );
     }
     
     void CoreFramework::CleanUp( )
     {
-#ifdef SGE__SDL
-        sdlObject.CleanUp( );
-#elif defined(SGE__SFML)
-        sfmlObject.CleanUp( );
-#elif defined(SGE__GLFW)
-        glfwObject.CleanUp( );
-#endif
+        frameworkObject.CleanUp( );
+    }
+    
+    void CoreFramework::SetWindowSize( GLint width, GLint height )
+    {
+        frameworkObject.SetWindowSize( width, height );
     }
 }

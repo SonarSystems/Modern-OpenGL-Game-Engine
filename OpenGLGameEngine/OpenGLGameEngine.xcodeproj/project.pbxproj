@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE01AD731D91DAEB000CFE14 /* FrameworkInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE01AD721D91DAEB000CFE14 /* FrameworkInterface.cpp */; };
 		EE141CB11D8D928F0013DFF2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE141CB01D8D928F0013DFF2 /* main.cpp */; };
 		EE141CB91D8D92E50013DFF2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE141CB81D8D92E50013DFF2 /* OpenGL.framework */; };
 		EE141CBB1D8D93020013DFF2 /* libglfw3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE141CBA1D8D93020013DFF2 /* libglfw3.3.1.dylib */; };
@@ -34,6 +35,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EE01AD721D91DAEB000CFE14 /* FrameworkInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FrameworkInterface.cpp; sourceTree = "<group>"; };
 		EE141CAD1D8D928F0013DFF2 /* OpenGLGameEngine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLGameEngine; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE141CB01D8D928F0013DFF2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EE141CB81D8D92E50013DFF2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				EEBB54D11D8F1FE600799089 /* FrameworkInterface.h */,
+				EE01AD721D91DAEB000CFE14 /* FrameworkInterface.cpp */,
 				EEBB54DC1D8F2A5C00799089 /* SGE_GLFW.hpp */,
 				EEBB54DB1D8F2A5C00799089 /* SGE_GLFW.cpp */,
 				EEBB54D31D8F20BA00799089 /* SGE_SDL.hpp */,
@@ -201,6 +204,7 @@
 				EEBB54DA1D8F284100799089 /* SGE_SFML.cpp in Sources */,
 				EEBB54D41D8F20BA00799089 /* SGE_SDL.cpp in Sources */,
 				EE141CB11D8D928F0013DFF2 /* main.cpp in Sources */,
+				EE01AD731D91DAEB000CFE14 /* FrameworkInterface.cpp in Sources */,
 				EEBB54DD1D8F2A5C00799089 /* SGE_GLFW.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = /usr/local/include;
+				INFOPLIST_FILE = "$(SRCROOT)/OpenGLGameEngine/Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glfw3/3.1.2/lib,
@@ -314,6 +319,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = /usr/local/include;
+				INFOPLIST_FILE = "$(SRCROOT)/OpenGLGameEngine/Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/glfw3/3.1.2/lib,

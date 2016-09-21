@@ -27,9 +27,11 @@ namespace SonarGameEngine
         SDL_GL_SetAttribute( SDL_GL_STENCIL_SIZE, 8 );
         SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, 24 );
         
-        this->window = SDL_CreateWindow( "SDL", 0, 0, 800, 640, SDL_WINDOW_OPENGL );
+        this->window = SDL_CreateWindow( "SDL", 0, 0, this->GetWindowSize( )[0], this->GetWindowSize( )[1], SDL_WINDOW_OPENGL );
         
-        this->context = SDL_GL_CreateContext( window );
+        this->context = SDL_GL_CreateContext( this->window );
+        
+     //   this->window->get
     }
     
     bool SGE_SDL::PollEvents( )

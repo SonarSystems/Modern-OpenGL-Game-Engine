@@ -10,25 +10,16 @@
 
 #include <iostream>
 
-const GLint WIDTH = 800, HEIGHT = 600;
-
 namespace SonarGameEngine
 {
     CoreEngine::CoreEngine( )
     {
+        coreFramework.SetWindowSize( 600, 600 );
     }
     
     bool CoreEngine::Init( )
     {
         coreFramework.Init( );
-        
-#ifdef SGE__SDL
-        
-#elif defined(SGE__SFML)
-        
-#elif defined(SGE__GLFW)
-        
-#endif
         
         // Set this to true so GLEW knows to use a modern approach to retrieving function pointers and extensions
         glewExperimental = GL_TRUE;
@@ -40,7 +31,7 @@ namespace SonarGameEngine
         }
         
         // Define the viewport dimensions
-        glViewport( 0, 0, WIDTH, HEIGHT );
+        glViewport( 0, 0, coreFramework.GetWindowSize( )[0], coreFramework.GetWindowSize( )[1] );
         
         return true;
     }

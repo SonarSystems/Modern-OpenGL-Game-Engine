@@ -19,8 +19,6 @@
     #include "SGE_GLFW.hpp"
 #endif
 
-
-
 namespace SonarGameEngine
 {
     class CoreFramework: public FrameworkInterface
@@ -36,13 +34,15 @@ namespace SonarGameEngine
         
         void CleanUp( );
         
+        void SetWindowSize( GLint width, GLint height );
+        
     private:
 #ifdef SGE__SDL
-        SGE_SDL sdlObject;
+        SGE_SDL frameworkObject;
 #elif defined(SGE__SFML)
-        SGE_SFML sfmlObject;
+        SGE_SFML frameworkObject;
 #elif defined(SGE__GLFW)
-        SGE_GLFW glfwObject;
-#endif
+        SGE_GLFW frameworkObject;
+#endif        
     };
 }
