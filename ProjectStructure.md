@@ -1,13 +1,6 @@
 <ul>
   <li>
     /root
-    
-  </li>
-</ul>
-
-<ul>
-  <li>
-    /root
       <ul>
         <li>
           /Core
