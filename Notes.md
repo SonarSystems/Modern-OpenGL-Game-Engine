@@ -3,12 +3,10 @@
 Settings Class<br />
 -Window Width<br />
 -Window Height<br />
--Window Width<br />
 -Depth bits<br />
 -Stencil Bits<br />
 -Major and Minor Version<br />
 -Resizable window true or false<br />
--Window Width<br />
 -Anti Aliasing <br />
 -Fullscreen <br />
 
