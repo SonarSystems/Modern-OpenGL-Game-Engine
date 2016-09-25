@@ -14,7 +14,7 @@ namespace SonarGameEngine
 {
     CoreEngine::CoreEngine( )
     {
-        coreFramework.SetWindowSize( 600, 600 );
+        coreSettings = CoreSettings::getInstance( );
     }
     
     bool CoreEngine::Init( )
@@ -31,7 +31,7 @@ namespace SonarGameEngine
         }
         
         // Define the viewport dimensions
-        glViewport( 0, 0, coreFramework.GetWindowSize( )[0], coreFramework.GetWindowSize( )[1] );
+        glViewport( 0, 0, coreSettings->GetScreenSize( )[0], coreSettings->GetScreenSize( )[1] );
         
         return true;
     }

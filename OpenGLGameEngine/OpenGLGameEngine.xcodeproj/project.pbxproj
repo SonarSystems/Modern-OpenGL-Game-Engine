@@ -20,6 +20,7 @@
 		EEBB54D71D8F265F00799089 /* CoreFramework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBB54D51D8F265F00799089 /* CoreFramework.cpp */; };
 		EEBB54DA1D8F284100799089 /* SGE_SFML.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBB54D81D8F284100799089 /* SGE_SFML.cpp */; };
 		EEBB54DD1D8F2A5C00799089 /* SGE_GLFW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBB54DB1D8F2A5C00799089 /* SGE_GLFW.cpp */; };
+		EED1D6AD1D97E265009A2DC7 /* CoreSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EED1D6AB1D97E265009A2DC7 /* CoreSettings.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +57,8 @@
 		EEBB54D91D8F284100799089 /* SGE_SFML.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SGE_SFML.hpp; sourceTree = "<group>"; };
 		EEBB54DB1D8F2A5C00799089 /* SGE_GLFW.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SGE_GLFW.cpp; sourceTree = "<group>"; };
 		EEBB54DC1D8F2A5C00799089 /* SGE_GLFW.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SGE_GLFW.hpp; sourceTree = "<group>"; };
+		EED1D6AB1D97E265009A2DC7 /* CoreSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoreSettings.cpp; sourceTree = "<group>"; };
+		EED1D6AC1D97E265009A2DC7 /* CoreSettings.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CoreSettings.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				EEBB54D01D8F1FB100799089 /* Frameworks */,
 				EEBB54CD1D8F1F7900799089 /* CoreEngine.hpp */,
 				EEBB54CC1D8F1F7900799089 /* CoreEngine.cpp */,
+				EED1D6AC1D97E265009A2DC7 /* CoreSettings.hpp */,
+				EED1D6AB1D97E265009A2DC7 /* CoreSettings.cpp */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 				EEBB54CE1D8F1F7900799089 /* CoreEngine.cpp in Sources */,
 				EEBB54D71D8F265F00799089 /* CoreFramework.cpp in Sources */,
 				EEBB54DA1D8F284100799089 /* SGE_SFML.cpp in Sources */,
+				EED1D6AD1D97E265009A2DC7 /* CoreSettings.cpp in Sources */,
 				EEBB54D41D8F20BA00799089 /* SGE_SDL.cpp in Sources */,
 				EE141CB11D8D928F0013DFF2 /* main.cpp in Sources */,
 				EE01AD731D91DAEB000CFE14 /* FrameworkInterface.cpp in Sources */,

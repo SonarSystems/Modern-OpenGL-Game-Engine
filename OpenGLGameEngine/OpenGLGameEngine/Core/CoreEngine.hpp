@@ -24,6 +24,7 @@
 #endif
 
 #include "Frameworks/CoreFramework.hpp"
+#include "CoreSettings.hpp"
 
 namespace SonarGameEngine
 {
@@ -43,5 +44,7 @@ namespace SonarGameEngine
         
     private:
         CoreFramework coreFramework;
+        
+        CoreSettings *coreSettings;
     };
 }

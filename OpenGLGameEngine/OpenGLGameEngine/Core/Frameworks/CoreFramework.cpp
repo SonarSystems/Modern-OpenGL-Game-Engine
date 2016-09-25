@@ -36,9 +36,4 @@ namespace SonarGameEngine
     {
         frameworkObject.CleanUp( );
     }
-    
-    void CoreFramework::SetWindowSize( GLint width, GLint height )
-    {
-        frameworkObject.SetWindowSize( width, height );
-    }
 }

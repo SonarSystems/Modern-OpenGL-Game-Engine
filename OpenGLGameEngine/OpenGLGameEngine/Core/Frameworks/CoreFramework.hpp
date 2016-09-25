@@ -33,9 +33,7 @@ namespace SonarGameEngine
         void SwapBuffers( );
         
         void CleanUp( );
-        
-        void SetWindowSize( GLint width, GLint height );
-        
+                
     private:
 #ifdef SGE__SDL
         SGE_SDL frameworkObject;

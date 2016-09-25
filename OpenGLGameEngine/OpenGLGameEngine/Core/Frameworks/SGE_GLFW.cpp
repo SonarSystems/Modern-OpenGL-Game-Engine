@@ -34,7 +34,7 @@ namespace SonarGameEngine
         glfwWindowHint( GLFW_RESIZABLE, GL_FALSE );
         
         // Create a GLFWwindow object that we can use for GLFW's functions
-        this->window = glfwCreateWindow( this->GetWindowSize( )[0], this->GetWindowSize( )[1], "GLFW", nullptr, nullptr );
+        this->window = glfwCreateWindow( coreSettings, this->GetWindowSize( )[1], "GLFW", nullptr, nullptr );
         
         int screenWidth, screenHeight;
         glfwGetFramebufferSize( window, &screenWidth, &screenHeight );

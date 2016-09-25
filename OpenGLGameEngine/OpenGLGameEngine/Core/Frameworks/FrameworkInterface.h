@@ -13,6 +13,8 @@
 
 #include <vector>
 
+#include "../CoreSettings.hpp"
+
 namespace SonarGameEngine
 {
     class FrameworkInterface
@@ -25,12 +27,9 @@ namespace SonarGameEngine
         virtual void SwapBuffers( ) = 0;
         
         virtual void CleanUp( ) = 0;
-        
-        void SetWindowSize( GLint width, GLint height );
-        
-        GLint *GetWindowSize( );
+
 
     protected:
-        GLint windowSize[2];
+        CoreSettings *coreSettings;
     };
 }
