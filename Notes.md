@@ -10,6 +10,6 @@ Settings Class<br />
 -Resizable window true or false<br />
 -Window Width<br />
 -Anti Aliasing <br />
-
+-Fullscreen <br />
 
 -Fix window not closing
