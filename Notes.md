@@ -9,5 +9,12 @@ Settings Class<br />
 -Resizable window true or false<br />
 -Anti Aliasing <br />
 -Fullscreen <br />
+-Window Title<br />
 
--Fix window not closing
+
+
+-Fix window not closing<br />
+
+
+
+glm vectors with width and height<br />
