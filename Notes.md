@@ -16,4 +16,7 @@ Settings Class<br />
 
 
 
-glm vectors with width and height<br />
+custom vectors with width and height<br />
+
+
+put init inside FrameworkInterface as virtual<br />
