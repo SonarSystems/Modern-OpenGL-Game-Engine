@@ -20,3 +20,6 @@ custom vectors with width and height<br />
 
 
 put init inside FrameworkInterface as virtual<br />
+
+
+add new line to the end of all the files<br />
