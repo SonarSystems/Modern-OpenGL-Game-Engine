@@ -23,3 +23,6 @@ put init inside FrameworkInterface as virtual<br />
 
 
 add new line to the end of all the files<br />
+
+
+Add using name define for SonarGameEngine as USING_NAMESPACE_SGE and USING_NAMESPACE_SONAR_GAME_ENGINE<br />
