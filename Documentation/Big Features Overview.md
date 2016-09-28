@@ -2,6 +2,8 @@
 
 Bring over GLHelper code and modernize it for Sonar Game Engine<br />
 
+Input class<br />
+
 Texturing using SOIL<br />
 
 Sprite Class<br />
