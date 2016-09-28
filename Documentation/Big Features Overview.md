@@ -2,8 +2,9 @@
 
 Bring over GLHelper code and modernize it for Sonar Game Engine<br />
 
-Sprite Class<br />
 Texturing using SOIL<br />
+
+Sprite Class<br />
 
 Translation<br />
 Rotation<br />
@@ -34,3 +35,5 @@ Height maps<br />
 Water system<br />
 
 Model loader<br />
+
+Networking<br />
