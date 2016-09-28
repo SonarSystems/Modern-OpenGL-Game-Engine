@@ -11,6 +11,8 @@
 #define GLEW_STATIC
 #include <GL/glew.h>
 
+#include "Foundations/Foundation.hpp"
+
 namespace SonarGameEngine
 {
     class CoreSettings
@@ -26,15 +28,32 @@ namespace SonarGameEngine
             return sInstance;
         }
         
-        GLint *GetScreenSize( );
+        // returns the window size vector
+        vec2<GLint> GetScreenSize( );
+        // returns the width of the application window
+        GLint GetScreenWidth( );
+        // returns the height of the application window
+        GLint GetScreenHeight( );
+        
+        // sets the size window size
         void SetScreenSize( GLint screenWidth, GLint screenHeight );
+        // sets the screen width
+        void SetScreenWidth( GLint screenWidth );
+        // sets the screen height
+        void SetScreenHeight( GLint screenHeight );
+        
         
     private:
         CoreSettings( );
         
         static CoreSettings *sInstance;
         
-        // Core Game Engine Properties
-        GLint screenSize[2];
+        /*********************************************************************************
+         Core Game Engine Properties
+         *********************************************************************************/
+        
+        // the size of the application window.
+        vec2<GLint> screenSize;
+        
     };
 }

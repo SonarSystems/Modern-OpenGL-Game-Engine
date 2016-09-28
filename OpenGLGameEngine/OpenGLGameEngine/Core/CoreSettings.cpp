@@ -18,18 +18,37 @@ namespace SonarGameEngine
     CoreSettings::CoreSettings( )
     {
         // set initial values
-        this->screenSize[0] = SGE_DEF_SCREEN_WIDTH;
-        this->screenSize[1] = SGE_DEF_SCREEN_HEIGHT;
+        this->screenSize = vec2<GLint> { SGE_DEF_SCREEN_WIDTH, SGE_DEF_SCREEN_HEIGHT };
     }
     
-    GLint *CoreSettings::GetScreenSize( )
+    vec2<GLint> CoreSettings::GetScreenSize( )
     {
         return this->screenSize;
     }
     
+    GLint CoreSettings::GetScreenWidth( )
+    {
+        return this->screenSize.width;
+    }
+    
+    GLint CoreSettings::GetScreenHeight( )
+    {
+        return this->screenSize.height;
+    }
+    
     void CoreSettings::SetScreenSize( GLint screenWidth, GLint screenHeight )
     {
-        this->screenSize[0] = screenWidth;
-        this->screenSize[1] = screenHeight;
+        this->screenSize = vec2<GLint> { screenWidth, screenHeight };
     }
+    
+    void CoreSettings::SetScreenWidth( GLint screenWidth )
+    {
+        this->screenSize.width = screenWidth;
+    }
+    
+    void CoreSettings::SetScreenHeight( GLint screenHeight )
+    {
+        this->screenSize.height = screenHeight;
+    }
+    
 }

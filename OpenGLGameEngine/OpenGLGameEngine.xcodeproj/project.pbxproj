@@ -46,6 +46,10 @@
 		EE141CBF1D8D94800013DFF2 /* libsfml-window.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-window.2.4.0.dylib"; path = "../../../../usr/local/Cellar/sfml/2.4.0/lib/libsfml-window.2.4.0.dylib"; sourceTree = "<group>"; };
 		EE141CC21D8D94F10013DFF2 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../usr/local/Cellar/sdl2/2.0.4/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
 		EE141CC71D8D99CC0013DFF2 /* DEFINITIONS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DEFINITIONS.h; sourceTree = "<group>"; };
+		EE23488A1D9B80A40074EBB2 /* Foundation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Foundation.hpp; sourceTree = "<group>"; };
+		EE23488C1D9B80A40074EBB2 /* vec2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vec2.hpp; sourceTree = "<group>"; };
+		EE23488D1D9B80A40074EBB2 /* vec3.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vec3.hpp; sourceTree = "<group>"; };
+		EE23488E1D9B80A40074EBB2 /* vec4.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vec4.hpp; sourceTree = "<group>"; };
 		EEBB54CC1D8F1F7900799089 /* CoreEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoreEngine.cpp; sourceTree = "<group>"; };
 		EEBB54CD1D8F1F7900799089 /* CoreEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CoreEngine.hpp; sourceTree = "<group>"; };
 		EEBB54D11D8F1FE600799089 /* FrameworkInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameworkInterface.h; sourceTree = "<group>"; };
@@ -118,9 +122,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE2348891D9B80A40074EBB2 /* Foundations */ = {
+			isa = PBXGroup;
+			children = (
+				EE23488A1D9B80A40074EBB2 /* Foundation.hpp */,
+				EE23488B1D9B80A40074EBB2 /* Vectors */,
+			);
+			path = Foundations;
+			sourceTree = "<group>";
+		};
+		EE23488B1D9B80A40074EBB2 /* Vectors */ = {
+			isa = PBXGroup;
+			children = (
+				EE23488C1D9B80A40074EBB2 /* vec2.hpp */,
+				EE23488D1D9B80A40074EBB2 /* vec3.hpp */,
+				EE23488E1D9B80A40074EBB2 /* vec4.hpp */,
+			);
+			path = Vectors;
+			sourceTree = "<group>";
+		};
 		EEBB54CB1D8F1F7900799089 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				EE2348891D9B80A40074EBB2 /* Foundations */,
 				EEBB54D01D8F1FB100799089 /* Frameworks */,
 				EEBB54CD1D8F1F7900799089 /* CoreEngine.hpp */,
 				EEBB54CC1D8F1F7900799089 /* CoreEngine.cpp */,

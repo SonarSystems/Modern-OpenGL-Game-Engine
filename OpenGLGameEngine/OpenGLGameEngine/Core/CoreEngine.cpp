@@ -31,7 +31,7 @@ namespace SonarGameEngine
         }
         
         // Define the viewport dimensions
-        glViewport( 0, 0, coreSettings->GetScreenSize( )[0], coreSettings->GetScreenSize( )[1] );
+        glViewport( 0, 0, coreSettings->GetScreenWidth( ), coreSettings->GetScreenHeight( ) );
         
         return true;
     }
@@ -58,48 +58,3 @@ namespace SonarGameEngine
         coreFramework.CleanUp( );
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

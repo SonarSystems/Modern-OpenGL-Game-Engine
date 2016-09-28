@@ -10,6 +10,8 @@
 
 #ifdef SGE__SDL
 
+#include <iostream>
+
 namespace SonarGameEngine
 {
     SGE_SDL::SGE_SDL( )
@@ -27,11 +29,23 @@ namespace SonarGameEngine
         SDL_GL_SetAttribute( SDL_GL_STENCIL_SIZE, 8 );
         SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, 24 );
         
-        this->window = SDL_CreateWindow( "SDL", 0, 0, this->coreSettings->GetScreenSize( )[0], this->coreSettings->GetScreenSize( )[1], SDL_WINDOW_OPENGL );
+        this->window = SDL_CreateWindow( "SDL", 0, 0, coreSettings->GetScreenWidth( ), coreSettings->GetScreenHeight( ), SDL_WINDOW_OPENGL );
+        
+        
+        SDL_DisplayMode dm;
+        
+        if (SDL_GetWindowDisplayMode(window, &dm) != 0)
+        {
+            SDL_Log("SDL_GetDesktopDisplayMode failed: %s", SDL_GetError());
+        }
+        
+        int w, h;
+        w = dm.w;
+        h = dm.h;
+        
+        std::cout << h << std::endl;
         
         this->context = SDL_GL_CreateContext( this->window );
-        
-     //   this->window->get
     }
     
     bool SGE_SDL::PollEvents( )
