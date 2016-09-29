@@ -25,7 +25,7 @@ namespace SonarGameEngine
         glfwInit( );
         
         // Set all the required options for GLFW
-        glfwWindowHint( GLFW_DEPTH_BITS, 24 );
+        glfwWindowHint( GLFW_DEPTH_BITS, coreSettings->GetDepthSize( ) );
         glfwWindowHint( GLFW_STENCIL_BITS, 8 );
         glfwWindowHint( GLFW_CONTEXT_VERSION_MAJOR, 3 );
         glfwWindowHint( GLFW_CONTEXT_VERSION_MINOR, 3 );
@@ -34,12 +34,13 @@ namespace SonarGameEngine
         glfwWindowHint( GLFW_RESIZABLE, GL_FALSE );
         
         // Create a GLFWwindow object that we can use for GLFW's functions
-        this->window = glfwCreateWindow( coreSettings, this->GetWindowSize( )[1], "GLFW", nullptr, nullptr );
+        this->window = glfwCreateWindow( coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), "GLFW", nullptr, nullptr );
         
-        int screenWidth, screenHeight;
-        glfwGetFramebufferSize( window, &screenWidth, &screenHeight );
+        int scaledWidth, scaledHeight;
+        glfwGetFramebufferSize( window, &scaledWidth, &scaledHeight );
         
-        this->SetWindowSize( screenWidth, screenHeight );
+        coreSettings->SetScaledWindowWidth( scaledWidth );
+        coreSettings->SetScaledWindowWidth( scaledHeight );
         
         if ( nullptr == window )
         {

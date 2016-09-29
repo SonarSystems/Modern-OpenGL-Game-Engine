@@ -27,23 +27,16 @@ namespace SonarGameEngine
         SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, 3 );
         SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, 3 );
         SDL_GL_SetAttribute( SDL_GL_STENCIL_SIZE, 8 );
-        SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, 24 );
+        SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, coreSettings->GetDepthSize( ) );
         
-        this->window = SDL_CreateWindow( "SDL", 0, 0, coreSettings->GetScreenWidth( ), coreSettings->GetScreenHeight( ), SDL_WINDOW_OPENGL );
+        this->window = SDL_CreateWindow( "SDL", 0, 0, coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), SDL_WINDOW_OPENGL );
         
+        int actualWidth, actualHeight;
         
-        SDL_DisplayMode dm;
+        SDL_GL_GetDrawableSize( window, &actualWidth, &actualHeight );
         
-        if (SDL_GetWindowDisplayMode(window, &dm) != 0)
-        {
-            SDL_Log("SDL_GetDesktopDisplayMode failed: %s", SDL_GetError());
-        }
-        
-        int w, h;
-        w = dm.w;
-        h = dm.h;
-        
-        std::cout << h << std::endl;
+        coreSettings->SetScaledWindowWidth( actualWidth );
+        coreSettings->SetScaledWindowHeight( actualHeight );
         
         this->context = SDL_GL_CreateContext( this->window );
     }

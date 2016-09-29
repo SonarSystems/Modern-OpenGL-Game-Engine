@@ -9,4 +9,4 @@
 #pragma once
 
 // SGE__SDL, SGE__SFML, SGE_GLFW
-#define SGE__SDL
+#define SGE__GLFW

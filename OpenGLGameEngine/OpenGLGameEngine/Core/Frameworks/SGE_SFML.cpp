@@ -22,13 +22,13 @@ namespace SonarGameEngine
     void SGE_SFML::Init( )
     {
         sf::ContextSettings settings;
-        settings.depthBits = 24;
+        settings.depthBits = coreSettings->GetDepthSize( );
         settings.stencilBits = 8;
         settings.majorVersion = 3;
         settings.minorVersion = 3;
         settings.attributeFlags = sf::ContextSettings::Core;
         
-        this->window = new sf::Window::Window( sf::VideoMode( this->GetWindowSize( )[0], this->GetWindowSize( )[1], 32 ), "SFML", sf::Style::Titlebar | sf::Style::Close, settings );        
+        this->window = new sf::Window::Window( sf::VideoMode( coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), 32 ), "SFML", sf::Style::Titlebar | sf::Style::Close, settings );
     }
     
     bool SGE_SFML::PollEvents( )
