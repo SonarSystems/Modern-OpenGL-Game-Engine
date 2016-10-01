@@ -23,12 +23,20 @@ namespace SonarGameEngine
     {
         sf::ContextSettings settings;
         settings.depthBits = coreSettings->GetDepthSize( );
-        settings.stencilBits = 8;
-        settings.majorVersion = 3;
-        settings.minorVersion = 3;
+        settings.stencilBits = coreSettings->GetStencilSize( );
+        settings.majorVersion = coreSettings->GetOpenGLVersion( ).major;
+        settings.minorVersion = coreSettings->GetOpenGLVersion( ).minor;
         settings.attributeFlags = sf::ContextSettings::Core;
+        settings.antialiasingLevel = coreSettings->GetAntiAliasing( );
         
-        this->window = new sf::Window::Window( sf::VideoMode( coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), 32 ), "SFML", sf::Style::Titlebar | sf::Style::Close, settings );
+        int windowResizable = 0;
+        
+        if ( coreSettings->GetWindowResizable( ) )
+        {
+            windowResizable = sf::Style::Resize;
+        }
+        
+        this->window = new sf::Window::Window( sf::VideoMode( coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), 32 ), "SFML", sf::Style::Titlebar | sf::Style::Close | windowResizable, settings );
     }
     
     bool SGE_SFML::PollEvents( )

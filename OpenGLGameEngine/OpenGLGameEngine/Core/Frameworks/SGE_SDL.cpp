@@ -21,15 +21,31 @@ namespace SonarGameEngine
     
     void SGE_SDL::Init( )
     {
+        int windowResizable = 0;
+        
+        if ( coreSettings->GetWindowResizable( ) )
+        {
+            windowResizable = SDL_WINDOW_RESIZABLE;
+        }
+        
+        int multiSampleBuffer = 0;
+        
+        if ( coreSettings->GetAntiAliasing( ) > 0 )
+        {
+            multiSampleBuffer = 1;
+        }
+        
         SDL_Init( SDL_INIT_EVERYTHING );
         
         SDL_GL_SetAttribute( SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE );
-        SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, 3 );
-        SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, 3 );
-        SDL_GL_SetAttribute( SDL_GL_STENCIL_SIZE, 8 );
+        SDL_GL_SetAttribute( SDL_GL_STENCIL_SIZE, coreSettings->GetStencilSize( ) );
+        SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, coreSettings->GetOpenGLVersion( ).major );
+        SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, coreSettings->GetOpenGLVersion( ).minor );
         SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, coreSettings->GetDepthSize( ) );
+        SDL_GL_SetAttribute( SDL_GL_MULTISAMPLEBUFFERS, multiSampleBuffer );
+        SDL_GL_SetAttribute( SDL_GL_MULTISAMPLESAMPLES, coreSettings->GetAntiAliasing( ) );
         
-        this->window = SDL_CreateWindow( "SDL", 0, 0, coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), SDL_WINDOW_OPENGL );
+        this->window = SDL_CreateWindow( "SDL", 0, 0, coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), SDL_WINDOW_OPENGL | windowResizable );
         
         int actualWidth, actualHeight;
         

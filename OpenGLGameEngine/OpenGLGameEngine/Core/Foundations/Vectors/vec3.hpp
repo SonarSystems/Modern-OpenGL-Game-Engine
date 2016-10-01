@@ -17,9 +17,9 @@ namespace SonarGameEngine
         // unify the different sets of data in one area in memory
         union
         {
-            struct{ T x, y, z; };
-            struct{ T r, g, b; };
-            struct{ T width, height, depth; };
+            struct { T x, y, z; };
+            struct { T r, g, b; };
+            struct { T width, height, depth; };
         };
     };
 }

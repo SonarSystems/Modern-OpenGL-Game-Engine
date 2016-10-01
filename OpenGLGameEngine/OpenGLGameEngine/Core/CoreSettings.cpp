@@ -11,9 +11,11 @@
 #define SGE_DEF_WINDOW_WIDTH 640
 #define SGE_DEF_WINDOW_HEIGHT 480
 #define SGE_DEF_WINDOW_DEPTH_SIZE 24
-#define SGE_DEF_WINDOW_STENCIL_BITS 8
+#define SGE_DEF_WINDOW_STENCIL_SIZE 8
 #define SGE_DEF_OPENGL_MAJOR_VERSION 3
 #define SGE_DEF_OPENGL_MINOR_VERSION 3
+#define SGE_DEF_IS_WINDOW_RESIZABLE GL_FALSE
+#define SGE_DEF_ANTI_ALIASING 0
 
 namespace SonarGameEngine
 {
@@ -26,6 +28,14 @@ namespace SonarGameEngine
         this->scaledWindowSize = vec2<GLint> { SGE_DEF_WINDOW_WIDTH, SGE_DEF_WINDOW_HEIGHT };
         
         this->depthSize = SGE_DEF_WINDOW_DEPTH_SIZE;
+        this->stencilSize = SGE_DEF_WINDOW_STENCIL_SIZE;
+        
+        this->openGLVersion.major = SGE_DEF_OPENGL_MAJOR_VERSION;
+        this->openGLVersion.minor = SGE_DEF_OPENGL_MINOR_VERSION;
+        
+        this->isWindowResizable = SGE_DEF_IS_WINDOW_RESIZABLE;
+        
+        this->antiAliasing = SGE_DEF_ANTI_ALIASING;
     }
     
     /**********************************************************************************************************************
@@ -107,12 +117,77 @@ namespace SonarGameEngine
     {
         return this->depthSize;
     }
-
+    
     void CoreSettings::SetDepthSize( GLint depthSize )
     {
         this->depthSize = depthSize;
     }
     /**********************************************************************************************************************
      **************************************** END DEPTH SIZE GETTERS AND SETTERS ******************************************
+     **********************************************************************************************************************/
+    
+    /**********************************************************************************************************************
+     ************************************** START STENCIL SIZE GETTERS AND SETTERS ****************************************
+     **********************************************************************************************************************/
+    GLint CoreSettings::GetStencilSize( )
+    {
+        return this->stencilSize;
+    }
+    
+    void CoreSettings::SetStencilSize( GLint stencilSize )
+    {
+        this->stencilSize = stencilSize;
+    }
+    /**********************************************************************************************************************
+     *************************************** END STENCIL SIZE GETTERS AND SETTERS *****************************************
+     **********************************************************************************************************************/
+    
+    /**********************************************************************************************************************
+     ************************************* START OPENGL VERSION GETTERS AND SETTERS ***************************************
+     **********************************************************************************************************************/
+    vec2<GLint> CoreSettings::GetOpenGLVersion( )
+    {
+        return this->openGLVersion;
+    }
+    
+    void CoreSettings::SetOpenGLVersion( GLint major, GLint minor )
+    {
+        this->openGLVersion.major = major;
+        this->openGLVersion.minor = minor;
+    }
+    /**********************************************************************************************************************
+     ************************************** END OPENGL VERSION GETTERS AND SETTERS ****************************************
+     **********************************************************************************************************************/
+    
+    /**********************************************************************************************************************
+     *********************************** START WINDOWS RESIZABLE GETTERS AND SETTERS **************************************
+     **********************************************************************************************************************/
+    GLboolean CoreSettings::GetWindowResizable( )
+    {
+        return this->isWindowResizable;
+    }
+    
+    void CoreSettings::SetWindowResizable( GLboolean isWindowResizable )
+    {
+        this->isWindowResizable = isWindowResizable;
+    }
+    /**********************************************************************************************************************
+     ************************************ END WINDOWS RESIZABLE GETTERS AND SETTERS ***************************************
+     **********************************************************************************************************************/
+    
+    /**********************************************************************************************************************
+     ************************************* START ANTI-ALIASING GETTERS AND SETTERS ****************************************
+     **********************************************************************************************************************/
+    GLint CoreSettings::GetAntiAliasing( )
+    {
+        return this->antiAliasing;
+    }
+    
+    void CoreSettings::SetAntiAliasing( GLint AA )
+    {
+        this->antiAliasing = AA;
+    }
+    /**********************************************************************************************************************
+     ************************************** END ANTI-ALIASING GETTERS AND SETTERS *****************************************
      **********************************************************************************************************************/
 }
