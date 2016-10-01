@@ -1,9 +1,4 @@
 Settings Class<br />
--Depth bits<br />
--Stencil Bits<br />
--Major and Minor Version<br />
--Resizable window true or false<br />
--Anti Aliasing <br />
 -Fullscreen <br />
 -Window Title<br />
 -VSYNC<br />
