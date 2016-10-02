@@ -29,14 +29,14 @@ namespace SonarGameEngine
         settings.attributeFlags = sf::ContextSettings::Core;
         settings.antialiasingLevel = coreSettings->GetAntiAliasing( );
         
-        int windowResizable = 0;
+        int windowResizable(0);
         
         if ( coreSettings->GetWindowResizable( ) )
         {
             windowResizable = sf::Style::Resize;
         }
         
-        this->window = new sf::Window::Window( sf::VideoMode( coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), 32 ), "SFML", sf::Style::Titlebar | sf::Style::Close | windowResizable, settings );
+        this->window = new sf::Window(sf::VideoMode(coreSettings->GetWindowWidth(), coreSettings->GetWindowHeight(), 32), "SFML", sf::Style::Titlebar | sf::Style::Close | windowResizable, settings);
     }
     
     bool SGE_SFML::PollEvents( )

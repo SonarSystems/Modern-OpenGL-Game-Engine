@@ -88,10 +88,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)OpenGLGameEngine\;$(ProjectDir)..\libs\glew-2.0.0\include;$(ProjectDir)..\libs\glfw-3.2.1\include;$(ProjectDir)..\libs\SDL2-2.0.4\include;$(ProjectDir)..\libs\SFML-2.4.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\libs\glew-2.0.0\lib\Debug\Win32;$(ProjectDir)..\libs\glfw-3.2.1\lib\Debug\Win32;$(ProjectDir)..\libs\SFML-2.4.0\lib\Debug\Win32;$(ProjectDir)..\libs\SDL2-2.0.4\lib\Debug\Win32</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32sd.lib;SDL2.lib;SDL2main.lib;glfw3.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;winmm.lib;version.lib;msimg32.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

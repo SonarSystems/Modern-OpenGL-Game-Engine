@@ -24,13 +24,13 @@ namespace SonarGameEngine
     public:
         SGE_SDL( );
         
-        void Init( );
+        void Init( ) override;
                 
-        bool PollEvents( );
+        bool PollEvents( ) override;
         
-        void SwapBuffers( );
+        void SwapBuffers( ) override;
         
-        void CleanUp( );
+        void CleanUp( ) override;
         
     private:
         SDL_Window *window;

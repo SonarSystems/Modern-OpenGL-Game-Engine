@@ -21,14 +21,14 @@ namespace SonarGameEngine
     
     void SGE_SDL::Init( )
     {
-        int windowResizable = 0;
+        int windowResizable(0);
         
         if ( coreSettings->GetWindowResizable( ) )
         {
             windowResizable = SDL_WINDOW_RESIZABLE;
         }
         
-        int multiSampleBuffer = 0;
+        int multiSampleBuffer(0);
         
         if ( coreSettings->GetAntiAliasing( ) > 0 )
         {

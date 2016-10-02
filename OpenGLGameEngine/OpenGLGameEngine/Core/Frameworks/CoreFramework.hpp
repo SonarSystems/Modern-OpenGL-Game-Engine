@@ -26,13 +26,13 @@ namespace SonarGameEngine
     public:
         CoreFramework( );
         
-        void Init( );
+        void Init( ) override;
         
-        bool PollEvents( );
+        bool PollEvents( ) override;
         
-        void SwapBuffers( );
+        void SwapBuffers( ) override;
         
-        void CleanUp( );
+        void CleanUp( ) override;
                 
     private:
 #ifdef SGE__SDL

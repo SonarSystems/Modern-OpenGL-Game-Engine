@@ -19,7 +19,7 @@
 
 namespace SonarGameEngine
 {
-    CoreSettings *CoreSettings::sInstance = 0;
+    CoreSettings *CoreSettings::sInstance(nullptr);
  
     CoreSettings::CoreSettings( )
     {
