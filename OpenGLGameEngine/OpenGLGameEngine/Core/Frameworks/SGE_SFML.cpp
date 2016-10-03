@@ -29,7 +29,7 @@ namespace SonarGameEngine
         settings.attributeFlags = sf::ContextSettings::Core;
         settings.antialiasingLevel = coreSettings->GetAntiAliasing( );
         
-        int windowResizable(0);
+        int windowResizable = 0;
         
         if ( coreSettings->GetWindowResizable( ) )
         {
