@@ -19,7 +19,7 @@
 
 namespace SonarGameEngine
 {
-    CoreSettings *CoreSettings::sInstance = 0;
+    CoreSettings *CoreSettings::sInstance = nullptr;
  
     CoreSettings::CoreSettings( )
     {
@@ -41,17 +41,17 @@ namespace SonarGameEngine
     /**********************************************************************************************************************
      *************************************** START WINDOW SIZE GETTERS AND SETTERS ****************************************
      **********************************************************************************************************************/
-    vec2<GLint> CoreSettings::GetWindowSize( )
+    const vec2<GLint>& CoreSettings::GetWindowSize( ) const
     {
         return this->windowSize;
     }
     
-    GLint CoreSettings::GetWindowWidth( )
+    GLint CoreSettings::GetWindowWidth( ) const
     {
         return this->windowSize.width;
     }
     
-    GLint CoreSettings::GetWindowHeight( )
+    GLint CoreSettings::GetWindowHeight( ) const
     {
         return this->windowSize.height;
     }
@@ -77,17 +77,17 @@ namespace SonarGameEngine
     /**********************************************************************************************************************
      *********************************** START SCALED WINDOW SIZE GETTERS AND SETTERS *************************************
      **********************************************************************************************************************/
-    vec2<GLint> CoreSettings::GetScaledWindowSize( )
+    const vec2<GLint>& CoreSettings::GetScaledWindowSize( ) const
     {
         return this->scaledWindowSize;
     }
     
-    GLint CoreSettings::GetScaledWindowWidth( )
+    GLint CoreSettings::GetScaledWindowWidth( ) const
     {
         return this->scaledWindowSize.width;
     }
     
-    GLint CoreSettings::GetScaledWindowHeight( )
+    GLint CoreSettings::GetScaledWindowHeight( ) const
     {
         return this->scaledWindowSize.height;
     }
@@ -113,7 +113,7 @@ namespace SonarGameEngine
     /**********************************************************************************************************************
      *************************************** START DEPTH SIZE GETTERS AND SETTERS *****************************************
      **********************************************************************************************************************/
-    GLint CoreSettings::GetDepthSize( )
+    GLint CoreSettings::GetDepthSize( ) const
     {
         return this->depthSize;
     }
@@ -129,7 +129,7 @@ namespace SonarGameEngine
     /**********************************************************************************************************************
      ************************************** START STENCIL SIZE GETTERS AND SETTERS ****************************************
      **********************************************************************************************************************/
-    GLint CoreSettings::GetStencilSize( )
+    GLint CoreSettings::GetStencilSize( ) const
     {
         return this->stencilSize;
     }
@@ -145,7 +145,7 @@ namespace SonarGameEngine
     /**********************************************************************************************************************
      ************************************* START OPENGL VERSION GETTERS AND SETTERS ***************************************
      **********************************************************************************************************************/
-    vec2<GLint> CoreSettings::GetOpenGLVersion( )
+    const vec2<GLint>& CoreSettings::GetOpenGLVersion( ) const
     {
         return this->openGLVersion;
     }
@@ -162,7 +162,7 @@ namespace SonarGameEngine
     /**********************************************************************************************************************
      *********************************** START WINDOWS RESIZABLE GETTERS AND SETTERS **************************************
      **********************************************************************************************************************/
-    GLboolean CoreSettings::GetWindowResizable( )
+    GLboolean CoreSettings::GetWindowResizable( ) const
     {
         return this->isWindowResizable;
     }
@@ -178,7 +178,7 @@ namespace SonarGameEngine
     /**********************************************************************************************************************
      ************************************* START ANTI-ALIASING GETTERS AND SETTERS ****************************************
      **********************************************************************************************************************/
-    GLint CoreSettings::GetAntiAliasing( )
+    GLint CoreSettings::GetAntiAliasing( ) const
     {
         return this->antiAliasing;
     }
