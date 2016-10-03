@@ -32,17 +32,17 @@ namespace SonarGameEngine
          * returns the window size vector
          * not scaled for high density screens like Retina Macs, use GetScaledWindowSize( )
          */
-        vec2<GLint> GetWindowSize( );
+        const vec2<GLint>& GetWindowSize( ) const;
         /**
          * returns the width of the application window
          * not scaled for high density screens like Retina Macs, use GetScaledWindowWidth( )
          */
-        GLint GetWindowWidth( );
+        GLint GetWindowWidth( ) const;
         /**
          * returns the height of the application window
          * not scaled for high density screens like Retina Macs, use GetScaledWindowHeight( )
          */
-        GLint GetWindowHeight( );
+        GLint GetWindowHeight( ) const;
         
         /**
          * sets the window size
@@ -68,17 +68,17 @@ namespace SonarGameEngine
          * returns the scaled window size vector
          * for non scaled use GetWindowSize( )
          */
-        vec2<GLint> GetScaledWindowSize( );
+        const vec2<GLint>& GetScaledWindowSize( ) const;
         /**
          * returns the scaled width of the application window
          * for non scaled use GetWindowWidth( )
          */
-        GLint GetScaledWindowWidth( );
+        GLint GetScaledWindowWidth( ) const;
         /**
          * returns the scaled height of the application window
          * for non scaled use GetWindowHeight( )
          */
-        GLint GetScaledWindowHeight( );
+        GLint GetScaledWindowHeight( ) const;
         
         /**
          * sets the scaled window size
@@ -103,7 +103,7 @@ namespace SonarGameEngine
         /**
          * returns the amount of depths bits of the application window
          */
-        GLint GetDepthSize( );
+        GLint GetDepthSize( ) const;
         
         /**
          * sets the amount of depth bits for the application window
@@ -114,7 +114,7 @@ namespace SonarGameEngine
         /**
          * returns the amount of stencil bits of the application window
          */
-        GLint GetStencilSize( );
+        GLint GetStencilSize( ) const;
         
         /**
          * sets the amount of stencil bits for the application window
@@ -127,7 +127,7 @@ namespace SonarGameEngine
          * .major is left of the decimal point aka 3 in 3.0
          * .minor is right of the decimal point aka 0 in 3.0
          */
-        vec2<GLint> GetOpenGLVersion( );
+        const vec2<GLint>& GetOpenGLVersion( ) const;
         
         /**
          * sets the OpenGL version
@@ -139,7 +139,7 @@ namespace SonarGameEngine
         /**
          * check if window is resizable
          */
-        GLboolean GetWindowResizable( );
+        GLboolean GetWindowResizable( ) const;
         
         /**
          * sets the OpenGL version
@@ -150,7 +150,7 @@ namespace SonarGameEngine
         /**
          * get Anti-aliasing amount
          */
-        GLint GetAntiAliasing( );
+        GLint GetAntiAliasing( ) const;
         
         /**
          * sets the Anti-aliasing amount
