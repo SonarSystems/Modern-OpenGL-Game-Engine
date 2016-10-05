@@ -1,5 +1,4 @@
 Settings Class<br />
--Window Title<br />
 -VSYNC<br />
 
 
