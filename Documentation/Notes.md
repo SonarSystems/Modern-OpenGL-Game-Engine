@@ -1,5 +1,5 @@
 Settings Class<br />
--Frame rate
+-Frame rate<br />
 -Fix window not closing<br />
 
 
