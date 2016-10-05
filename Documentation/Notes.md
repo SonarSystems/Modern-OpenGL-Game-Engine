@@ -1,8 +1,5 @@
 Settings Class<br />
--VSYNC<br />
-
-
-
+-Frame rate
 -Fix window not closing<br />
 
 
