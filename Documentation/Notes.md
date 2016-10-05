@@ -1,5 +1,6 @@
 Settings Class<br />
 -Fullscreen <br />
+-Borderless Windowed Mode Fullscreen<br />
 -Window Title<br />
 -VSYNC<br />
 
