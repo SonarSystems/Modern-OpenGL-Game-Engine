@@ -28,11 +28,29 @@ namespace SonarGameEngine
             windowResizable = SDL_WINDOW_RESIZABLE;
         }
         
+        int windowFullscreen = 0;
+        
+        if ( coreSettings->GetWindowFullscreen( ) )
+        {
+            windowFullscreen = SDL_WINDOW_FULLSCREEN;
+        }
+        
         int multiSampleBuffer = 0;
         
         if ( coreSettings->GetAntiAliasing( ) > 0 )
         {
             multiSampleBuffer = 1;
+        }
+        
+        GLint vsync;
+        
+        if ( coreSettings->GetVSync( ) )
+        {
+            vsync = 1;
+        }
+        else
+        {
+            vsync = 0;
         }
         
         SDL_Init( SDL_INIT_EVERYTHING );
@@ -44,8 +62,9 @@ namespace SonarGameEngine
         SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, coreSettings->GetDepthSize( ) );
         SDL_GL_SetAttribute( SDL_GL_MULTISAMPLEBUFFERS, multiSampleBuffer );
         SDL_GL_SetAttribute( SDL_GL_MULTISAMPLESAMPLES, coreSettings->GetAntiAliasing( ) );
+        SDL_GL_SetSwapInterval( vsync );
         
-        this->window = SDL_CreateWindow( "SDL", 0, 0, coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), SDL_WINDOW_OPENGL | windowResizable );
+        this->window = SDL_CreateWindow( coreSettings->GetWindowTitle( ).c_str( ), 0, 0, coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), SDL_WINDOW_OPENGL | windowResizable | windowFullscreen );
         
         int actualWidth, actualHeight;
         

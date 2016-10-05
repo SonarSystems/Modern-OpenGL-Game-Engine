@@ -21,13 +21,6 @@ namespace SonarGameEngine
     
     void SGE_SFML::Init( )
     {
-        sf::ContextSettings settings;
-        settings.depthBits = coreSettings->GetDepthSize( );
-        settings.stencilBits = coreSettings->GetStencilSize( );
-        settings.majorVersion = coreSettings->GetOpenGLVersion( ).major;
-        settings.minorVersion = coreSettings->GetOpenGLVersion( ).minor;
-        settings.attributeFlags = sf::ContextSettings::Core;
-        settings.antialiasingLevel = coreSettings->GetAntiAliasing( );
         
         int windowResizable = 0;
         
@@ -36,7 +29,24 @@ namespace SonarGameEngine
             windowResizable = sf::Style::Resize;
         }
         
-        this->window = new sf::Window(sf::VideoMode(coreSettings->GetWindowWidth(), coreSettings->GetWindowHeight(), 32), "SFML", sf::Style::Titlebar | sf::Style::Close | windowResizable, settings);
+        int windowFullscreen = 0;
+        
+        if ( coreSettings->GetWindowFullscreen( ) )
+        {
+            windowFullscreen = sf::Style::Fullscreen;
+        }
+        
+        sf::ContextSettings settings;
+        settings.depthBits = coreSettings->GetDepthSize( );
+        settings.stencilBits = coreSettings->GetStencilSize( );
+        settings.majorVersion = coreSettings->GetOpenGLVersion( ).major;
+        settings.minorVersion = coreSettings->GetOpenGLVersion( ).minor;
+        settings.attributeFlags = sf::ContextSettings::Core;
+        settings.antialiasingLevel = coreSettings->GetAntiAliasing( );
+        
+        this->window = new sf::Window(sf::VideoMode(coreSettings->GetWindowWidth(), coreSettings->GetWindowHeight(), 32), coreSettings->GetWindowTitle( ).c_str( ), sf::Style::Titlebar | sf::Style::Close | windowResizable | windowFullscreen, settings);
+        
+        window->setVerticalSyncEnabled( coreSettings->GetVSync( ) );
     }
     
     bool SGE_SFML::PollEvents( )

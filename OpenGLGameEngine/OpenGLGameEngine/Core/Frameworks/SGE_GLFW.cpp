@@ -24,6 +24,24 @@ namespace SonarGameEngine
         // Init GLFW
         glfwInit( );
         
+        GLFWmonitor *fullscreen = nullptr;
+        
+        if ( coreSettings->GetWindowFullscreen( ) )
+        {
+            fullscreen = glfwGetPrimaryMonitor( );
+        }
+        
+        GLint vsync;
+        
+        if ( coreSettings->GetVSync( ) )
+        {
+            vsync = 1;
+        }
+        else
+        {
+            vsync = 0;
+        }
+        
         // Set all the required options for GLFW
         glfwWindowHint( GLFW_DEPTH_BITS, coreSettings->GetDepthSize( ) );
         glfwWindowHint( GLFW_STENCIL_BITS, coreSettings->GetStencilSize( ) );
@@ -35,7 +53,7 @@ namespace SonarGameEngine
         glfwWindowHint( GLFW_SAMPLES, coreSettings->GetAntiAliasing( ) );
         
         // Create a GLFWwindow object that we can use for GLFW's functions
-        this->window = glfwCreateWindow( coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), "GLFW", nullptr, nullptr );
+        this->window = glfwCreateWindow( coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), coreSettings->GetWindowTitle( ).c_str( ), fullscreen, nullptr );
         
         int scaledWidth, scaledHeight;
         glfwGetFramebufferSize( window, &scaledWidth, &scaledHeight );
@@ -50,6 +68,8 @@ namespace SonarGameEngine
             
             //return EXIT_FAILURE;
         }
+        
+        glfwSwapInterval( vsync );
         
         glfwMakeContextCurrent( window );
     }

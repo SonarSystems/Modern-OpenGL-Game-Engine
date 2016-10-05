@@ -13,6 +13,8 @@
 
 #include "Foundations/Foundation.hpp"
 
+#include <string>
+
 namespace SonarGameEngine
 {
     class CoreSettings
@@ -142,10 +144,21 @@ namespace SonarGameEngine
         GLboolean GetWindowResizable( ) const;
         
         /**
-         * sets the OpenGL version
+         * sets if the window is resizable
          * @param isWindowResizable is the window resizable by the user
          */
         void SetWindowResizable( GLboolean isWindowResizable );
+        
+        /**
+         * check if window is fullscreen
+         */
+        GLboolean GetWindowFullscreen( ) const;
+        
+        /**
+         * sets if the window is fullscreen
+         * @param isWindowFullscreen is the window fullscreen
+         */
+        void SetWindowFullscreen( GLboolean isWindowFullscreen );
         
         /**
          * get Anti-aliasing amount
@@ -157,6 +170,28 @@ namespace SonarGameEngine
          * @param AA the amount of Anti-aliasing to be applied
          */
         void SetAntiAliasing( GLint AA );
+        
+        /**
+         * get window title
+         */
+        std::string GetWindowTitle( ) const;
+        
+        /**
+         * sets the window title
+         * @param windowTitle the title of the window
+         */
+        void SetWindowTitle( std::string windowTitle );
+        
+        /**
+         * sets vsync is status (on or off)
+         * @param isVSync is vsync enabled
+         */
+        void SetVSync( GLboolean isVSync );
+        
+        /**
+         * check if vsync is enabled
+         */
+        GLboolean GetVSync( ) const;
         
     private:
         CoreSettings( );
@@ -180,8 +215,14 @@ namespace SonarGameEngine
         vec2<GLint> openGLVersion;
         // is window resizable
         GLboolean isWindowResizable;
+        // is window fullscreen
+        GLboolean isWindowFullscreen;
         // amount AA (Anti-Aliasing to be applied)
         GLint antiAliasing;
+        // window title
+        std::string windowTitle;
+        // is vsync enabled
+        GLboolean isVSync;
         
     };
 }
