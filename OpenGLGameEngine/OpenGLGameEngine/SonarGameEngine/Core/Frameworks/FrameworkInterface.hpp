@@ -24,12 +24,15 @@ namespace SonarGameEngine
         
         virtual void Init( ) = 0;
         
-        virtual bool PollEvents( ) = 0;
+        virtual void PollEvents( ) = 0;
         
         virtual void SwapBuffers( ) = 0;
         
         virtual void CleanUp( ) = 0;
 
+        virtual bool WindowIsOpen( ) = 0;
+        
+        virtual void CloseWindow( ) = 0;
 
     protected:
         CoreSettings *coreSettings;

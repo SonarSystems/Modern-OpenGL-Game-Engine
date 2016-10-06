@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE01AD731D91DAEB000CFE14 /* FrameworkInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE01AD721D91DAEB000CFE14 /* FrameworkInterface.cpp */; };
+		EE0CDAB01DA6C01100B8CC56 /* CoreEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE0CDA9A1DA6C01100B8CC56 /* CoreEngine.cpp */; };
+		EE0CDAB11DA6C01100B8CC56 /* CoreSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE0CDA9C1DA6C01100B8CC56 /* CoreSettings.cpp */; };
+		EE0CDAB21DA6C01100B8CC56 /* CoreFramework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE0CDAA51DA6C01100B8CC56 /* CoreFramework.cpp */; };
+		EE0CDAB31DA6C01100B8CC56 /* FrameworkInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE0CDAA71DA6C01100B8CC56 /* FrameworkInterface.cpp */; };
+		EE0CDAB41DA6C01100B8CC56 /* SGE_GLFW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE0CDAA91DA6C01100B8CC56 /* SGE_GLFW.cpp */; };
+		EE0CDAB51DA6C01100B8CC56 /* SGE_SDL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE0CDAAB1DA6C01100B8CC56 /* SGE_SDL.cpp */; };
+		EE0CDAB61DA6C01100B8CC56 /* SGE_SFML.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE0CDAAD1DA6C01100B8CC56 /* SGE_SFML.cpp */; };
 		EE141CB11D8D928F0013DFF2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE141CB01D8D928F0013DFF2 /* main.cpp */; };
 		EE141CB91D8D92E50013DFF2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE141CB81D8D92E50013DFF2 /* OpenGL.framework */; };
 		EE141CBB1D8D93020013DFF2 /* libglfw3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE141CBA1D8D93020013DFF2 /* libglfw3.3.1.dylib */; };
@@ -15,12 +21,6 @@
 		EE141CC01D8D94800013DFF2 /* libsfml-system.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE141CBE1D8D94800013DFF2 /* libsfml-system.2.4.0.dylib */; };
 		EE141CC11D8D94800013DFF2 /* libsfml-window.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE141CBF1D8D94800013DFF2 /* libsfml-window.2.4.0.dylib */; };
 		EE141CC31D8D94F10013DFF2 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE141CC21D8D94F10013DFF2 /* libSDL2-2.0.0.dylib */; };
-		EEBB54CE1D8F1F7900799089 /* CoreEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBB54CC1D8F1F7900799089 /* CoreEngine.cpp */; };
-		EEBB54D41D8F20BA00799089 /* SGE_SDL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBB54D21D8F20BA00799089 /* SGE_SDL.cpp */; };
-		EEBB54D71D8F265F00799089 /* CoreFramework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBB54D51D8F265F00799089 /* CoreFramework.cpp */; };
-		EEBB54DA1D8F284100799089 /* SGE_SFML.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBB54D81D8F284100799089 /* SGE_SFML.cpp */; };
-		EEBB54DD1D8F2A5C00799089 /* SGE_GLFW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEBB54DB1D8F2A5C00799089 /* SGE_GLFW.cpp */; };
-		EED1D6AD1D97E265009A2DC7 /* CoreSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EED1D6AB1D97E265009A2DC7 /* CoreSettings.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,7 +36,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EE01AD721D91DAEB000CFE14 /* FrameworkInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FrameworkInterface.cpp; sourceTree = "<group>"; };
+		EE0CDA9A1DA6C01100B8CC56 /* CoreEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoreEngine.cpp; sourceTree = "<group>"; };
+		EE0CDA9B1DA6C01100B8CC56 /* CoreEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CoreEngine.hpp; sourceTree = "<group>"; };
+		EE0CDA9C1DA6C01100B8CC56 /* CoreSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoreSettings.cpp; sourceTree = "<group>"; };
+		EE0CDA9D1DA6C01100B8CC56 /* CoreSettings.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CoreSettings.hpp; sourceTree = "<group>"; };
+		EE0CDA9F1DA6C01100B8CC56 /* Foundation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Foundation.hpp; sourceTree = "<group>"; };
+		EE0CDAA11DA6C01100B8CC56 /* vec2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vec2.hpp; sourceTree = "<group>"; };
+		EE0CDAA21DA6C01100B8CC56 /* vec3.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vec3.hpp; sourceTree = "<group>"; };
+		EE0CDAA31DA6C01100B8CC56 /* vec4.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vec4.hpp; sourceTree = "<group>"; };
+		EE0CDAA51DA6C01100B8CC56 /* CoreFramework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoreFramework.cpp; sourceTree = "<group>"; };
+		EE0CDAA61DA6C01100B8CC56 /* CoreFramework.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CoreFramework.hpp; sourceTree = "<group>"; };
+		EE0CDAA71DA6C01100B8CC56 /* FrameworkInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FrameworkInterface.cpp; sourceTree = "<group>"; };
+		EE0CDAA81DA6C01100B8CC56 /* FrameworkInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FrameworkInterface.hpp; sourceTree = "<group>"; };
+		EE0CDAA91DA6C01100B8CC56 /* SGE_GLFW.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SGE_GLFW.cpp; sourceTree = "<group>"; };
+		EE0CDAAA1DA6C01100B8CC56 /* SGE_GLFW.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SGE_GLFW.hpp; sourceTree = "<group>"; };
+		EE0CDAAB1DA6C01100B8CC56 /* SGE_SDL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SGE_SDL.cpp; sourceTree = "<group>"; };
+		EE0CDAAC1DA6C01100B8CC56 /* SGE_SDL.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SGE_SDL.hpp; sourceTree = "<group>"; };
+		EE0CDAAD1DA6C01100B8CC56 /* SGE_SFML.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SGE_SFML.cpp; sourceTree = "<group>"; };
+		EE0CDAAE1DA6C01100B8CC56 /* SGE_SFML.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SGE_SFML.hpp; sourceTree = "<group>"; };
+		EE0CDAAF1DA6C01100B8CC56 /* DEFINITIONS.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DEFINITIONS.hpp; sourceTree = "<group>"; };
+		EE0CDAB71DA6C04600B8CC56 /* SonarGameEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SonarGameEngine.hpp; sourceTree = "<group>"; };
 		EE141CAD1D8D928F0013DFF2 /* OpenGLGameEngine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLGameEngine; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE141CB01D8D928F0013DFF2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EE141CB81D8D92E50013DFF2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -45,24 +64,6 @@
 		EE141CBE1D8D94800013DFF2 /* libsfml-system.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-system.2.4.0.dylib"; path = "../../../../usr/local/Cellar/sfml/2.4.0/lib/libsfml-system.2.4.0.dylib"; sourceTree = "<group>"; };
 		EE141CBF1D8D94800013DFF2 /* libsfml-window.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-window.2.4.0.dylib"; path = "../../../../usr/local/Cellar/sfml/2.4.0/lib/libsfml-window.2.4.0.dylib"; sourceTree = "<group>"; };
 		EE141CC21D8D94F10013DFF2 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../usr/local/Cellar/sdl2/2.0.4/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
-		EE141CC71D8D99CC0013DFF2 /* DEFINITIONS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DEFINITIONS.h; sourceTree = "<group>"; };
-		EE23488A1D9B80A40074EBB2 /* Foundation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Foundation.hpp; sourceTree = "<group>"; };
-		EE23488C1D9B80A40074EBB2 /* vec2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vec2.hpp; sourceTree = "<group>"; };
-		EE23488D1D9B80A40074EBB2 /* vec3.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vec3.hpp; sourceTree = "<group>"; };
-		EE23488E1D9B80A40074EBB2 /* vec4.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vec4.hpp; sourceTree = "<group>"; };
-		EEBB54CC1D8F1F7900799089 /* CoreEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoreEngine.cpp; sourceTree = "<group>"; };
-		EEBB54CD1D8F1F7900799089 /* CoreEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CoreEngine.hpp; sourceTree = "<group>"; };
-		EEBB54D11D8F1FE600799089 /* FrameworkInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameworkInterface.h; sourceTree = "<group>"; };
-		EEBB54D21D8F20BA00799089 /* SGE_SDL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SGE_SDL.cpp; sourceTree = "<group>"; };
-		EEBB54D31D8F20BA00799089 /* SGE_SDL.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SGE_SDL.hpp; sourceTree = "<group>"; };
-		EEBB54D51D8F265F00799089 /* CoreFramework.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoreFramework.cpp; sourceTree = "<group>"; };
-		EEBB54D61D8F265F00799089 /* CoreFramework.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CoreFramework.hpp; sourceTree = "<group>"; };
-		EEBB54D81D8F284100799089 /* SGE_SFML.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SGE_SFML.cpp; sourceTree = "<group>"; };
-		EEBB54D91D8F284100799089 /* SGE_SFML.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SGE_SFML.hpp; sourceTree = "<group>"; };
-		EEBB54DB1D8F2A5C00799089 /* SGE_GLFW.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SGE_GLFW.cpp; sourceTree = "<group>"; };
-		EEBB54DC1D8F2A5C00799089 /* SGE_GLFW.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SGE_GLFW.hpp; sourceTree = "<group>"; };
-		EED1D6AB1D97E265009A2DC7 /* CoreSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoreSettings.cpp; sourceTree = "<group>"; };
-		EED1D6AC1D97E265009A2DC7 /* CoreSettings.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CoreSettings.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +83,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE0CDA981DA6C01100B8CC56 /* SonarGameEngine */ = {
+			isa = PBXGroup;
+			children = (
+				EE0CDA991DA6C01100B8CC56 /* Core */,
+				EE0CDAAF1DA6C01100B8CC56 /* DEFINITIONS.hpp */,
+				EE0CDAB71DA6C04600B8CC56 /* SonarGameEngine.hpp */,
+			);
+			path = SonarGameEngine;
+			sourceTree = "<group>";
+		};
+		EE0CDA991DA6C01100B8CC56 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				EE0CDA9A1DA6C01100B8CC56 /* CoreEngine.cpp */,
+				EE0CDA9B1DA6C01100B8CC56 /* CoreEngine.hpp */,
+				EE0CDA9C1DA6C01100B8CC56 /* CoreSettings.cpp */,
+				EE0CDA9D1DA6C01100B8CC56 /* CoreSettings.hpp */,
+				EE0CDA9E1DA6C01100B8CC56 /* Foundations */,
+				EE0CDAA41DA6C01100B8CC56 /* Frameworks */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		EE0CDA9E1DA6C01100B8CC56 /* Foundations */ = {
+			isa = PBXGroup;
+			children = (
+				EE0CDA9F1DA6C01100B8CC56 /* Foundation.hpp */,
+				EE0CDAA01DA6C01100B8CC56 /* Vectors */,
+			);
+			path = Foundations;
+			sourceTree = "<group>";
+		};
+		EE0CDAA01DA6C01100B8CC56 /* Vectors */ = {
+			isa = PBXGroup;
+			children = (
+				EE0CDAA11DA6C01100B8CC56 /* vec2.hpp */,
+				EE0CDAA21DA6C01100B8CC56 /* vec3.hpp */,
+				EE0CDAA31DA6C01100B8CC56 /* vec4.hpp */,
+			);
+			path = Vectors;
+			sourceTree = "<group>";
+		};
+		EE0CDAA41DA6C01100B8CC56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE0CDAA51DA6C01100B8CC56 /* CoreFramework.cpp */,
+				EE0CDAA61DA6C01100B8CC56 /* CoreFramework.hpp */,
+				EE0CDAA71DA6C01100B8CC56 /* FrameworkInterface.cpp */,
+				EE0CDAA81DA6C01100B8CC56 /* FrameworkInterface.hpp */,
+				EE0CDAA91DA6C01100B8CC56 /* SGE_GLFW.cpp */,
+				EE0CDAAA1DA6C01100B8CC56 /* SGE_GLFW.hpp */,
+				EE0CDAAB1DA6C01100B8CC56 /* SGE_SDL.cpp */,
+				EE0CDAAC1DA6C01100B8CC56 /* SGE_SDL.hpp */,
+				EE0CDAAD1DA6C01100B8CC56 /* SGE_SFML.cpp */,
+				EE0CDAAE1DA6C01100B8CC56 /* SGE_SFML.hpp */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		EE141CA41D8D928F0013DFF2 = {
 			isa = PBXGroup;
 			children = (
@@ -102,9 +162,8 @@
 		EE141CAF1D8D928F0013DFF2 /* OpenGLGameEngine */ = {
 			isa = PBXGroup;
 			children = (
-				EEBB54CB1D8F1F7900799089 /* Core */,
+				EE0CDA981DA6C01100B8CC56 /* SonarGameEngine */,
 				EE141CB01D8D928F0013DFF2 /* main.cpp */,
-				EE141CC71D8D99CC0013DFF2 /* DEFINITIONS.h */,
 			);
 			path = OpenGLGameEngine;
 			sourceTree = "<group>";
@@ -120,55 +179,6 @@
 				EE141CB81D8D92E50013DFF2 /* OpenGL.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EE2348891D9B80A40074EBB2 /* Foundations */ = {
-			isa = PBXGroup;
-			children = (
-				EE23488A1D9B80A40074EBB2 /* Foundation.hpp */,
-				EE23488B1D9B80A40074EBB2 /* Vectors */,
-			);
-			path = Foundations;
-			sourceTree = "<group>";
-		};
-		EE23488B1D9B80A40074EBB2 /* Vectors */ = {
-			isa = PBXGroup;
-			children = (
-				EE23488C1D9B80A40074EBB2 /* vec2.hpp */,
-				EE23488D1D9B80A40074EBB2 /* vec3.hpp */,
-				EE23488E1D9B80A40074EBB2 /* vec4.hpp */,
-			);
-			path = Vectors;
-			sourceTree = "<group>";
-		};
-		EEBB54CB1D8F1F7900799089 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				EE2348891D9B80A40074EBB2 /* Foundations */,
-				EEBB54D01D8F1FB100799089 /* Frameworks */,
-				EEBB54CD1D8F1F7900799089 /* CoreEngine.hpp */,
-				EEBB54CC1D8F1F7900799089 /* CoreEngine.cpp */,
-				EED1D6AC1D97E265009A2DC7 /* CoreSettings.hpp */,
-				EED1D6AB1D97E265009A2DC7 /* CoreSettings.cpp */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		EEBB54D01D8F1FB100799089 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EEBB54D11D8F1FE600799089 /* FrameworkInterface.h */,
-				EE01AD721D91DAEB000CFE14 /* FrameworkInterface.cpp */,
-				EEBB54DC1D8F2A5C00799089 /* SGE_GLFW.hpp */,
-				EEBB54DB1D8F2A5C00799089 /* SGE_GLFW.cpp */,
-				EEBB54D31D8F20BA00799089 /* SGE_SDL.hpp */,
-				EEBB54D21D8F20BA00799089 /* SGE_SDL.cpp */,
-				EEBB54D91D8F284100799089 /* SGE_SFML.hpp */,
-				EEBB54D81D8F284100799089 /* SGE_SFML.cpp */,
-				EEBB54D61D8F265F00799089 /* CoreFramework.hpp */,
-				EEBB54D51D8F265F00799089 /* CoreFramework.cpp */,
-			);
-			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,14 +238,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEBB54CE1D8F1F7900799089 /* CoreEngine.cpp in Sources */,
-				EEBB54D71D8F265F00799089 /* CoreFramework.cpp in Sources */,
-				EEBB54DA1D8F284100799089 /* SGE_SFML.cpp in Sources */,
-				EED1D6AD1D97E265009A2DC7 /* CoreSettings.cpp in Sources */,
-				EEBB54D41D8F20BA00799089 /* SGE_SDL.cpp in Sources */,
+				EE0CDAB01DA6C01100B8CC56 /* CoreEngine.cpp in Sources */,
+				EE0CDAB51DA6C01100B8CC56 /* SGE_SDL.cpp in Sources */,
+				EE0CDAB21DA6C01100B8CC56 /* CoreFramework.cpp in Sources */,
+				EE0CDAB11DA6C01100B8CC56 /* CoreSettings.cpp in Sources */,
+				EE0CDAB31DA6C01100B8CC56 /* FrameworkInterface.cpp in Sources */,
+				EE0CDAB61DA6C01100B8CC56 /* SGE_SFML.cpp in Sources */,
 				EE141CB11D8D928F0013DFF2 /* main.cpp in Sources */,
-				EE01AD731D91DAEB000CFE14 /* FrameworkInterface.cpp in Sources */,
-				EEBB54DD1D8F2A5C00799089 /* SGE_GLFW.cpp in Sources */,
+				EE0CDAB41DA6C01100B8CC56 /* SGE_GLFW.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

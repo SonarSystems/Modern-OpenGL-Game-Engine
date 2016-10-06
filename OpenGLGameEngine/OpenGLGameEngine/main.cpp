@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "Core/CoreEngine.hpp"
+#include "SonarGameEngine/SonarGameEngine.hpp"
 
-using namespace SonarGameEngine;
+USING_NAMESPACE_SONAR_GAME_ENGINE;
 
 int main( int argc, char *argv[] )
 {
@@ -10,12 +10,9 @@ int main( int argc, char *argv[] )
     
     ce.Init( );
     
-    while ( true )
+    while ( ce.WindowIsOpen( ) )
     {
-        if ( !ce.GameLoop( ) )
-        {
-            break;
-        }
+        ce.GameLoop( );
     }
     
     ce.CleanUp( );

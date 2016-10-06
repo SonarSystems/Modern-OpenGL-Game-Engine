@@ -42,10 +42,10 @@ namespace SonarGameEngine
             glDisable( GL_MULTISAMPLE );
         }
         
-        return true;
+        return EXIT_SUCCESS;
     }
     
-    bool CoreEngine::GameLoop( )
+    void CoreEngine::GameLoop( )
     {
         coreFramework.PollEvents( );
 
@@ -57,13 +57,16 @@ namespace SonarGameEngine
 
         
         coreFramework.SwapBuffers( );
-        
-        return true;
     }
     
     void CoreEngine::CleanUp( )
     {
         
         coreFramework.CleanUp( );
+    }
+    
+    bool CoreEngine::WindowIsOpen( )
+    {
+        return coreFramework.WindowIsOpen( );
     }
 }

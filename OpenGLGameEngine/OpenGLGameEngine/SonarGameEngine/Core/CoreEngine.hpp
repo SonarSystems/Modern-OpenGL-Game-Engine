@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "DEFINITIONS.h"
+#include "DEFINITIONS.hpp"
 
 #include <string>
 
@@ -38,9 +38,12 @@ namespace SonarGameEngine
         bool Init( );
         
         // the game loop that is run every frame
-        bool GameLoop( );
+        void GameLoop( );
         
         void CleanUp( );
+        
+        // is the window still open. Returns true if it is
+        bool WindowIsOpen( );
         
     private:
         CoreFramework coreFramework;

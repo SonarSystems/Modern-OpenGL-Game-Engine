@@ -19,6 +19,11 @@ namespace SonarGameEngine
         
     }
     
+    void cbfun( GLFWwindow *window )
+    {
+        glfwSetWindowShouldClose( window, GL_TRUE );
+    }
+    
     void SGE_GLFW::Init( )
     {
         // Init GLFW
@@ -55,6 +60,8 @@ namespace SonarGameEngine
         // Create a GLFWwindow object that we can use for GLFW's functions
         this->window = glfwCreateWindow( coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), coreSettings->GetWindowTitle( ).c_str( ), fullscreen, nullptr );
         
+        
+        
         int scaledWidth, scaledHeight;
         glfwGetFramebufferSize( window, &scaledWidth, &scaledHeight );
         
@@ -69,16 +76,16 @@ namespace SonarGameEngine
             //return EXIT_FAILURE;
         }
         
+        glfwSetWindowCloseCallback( this->window, cbfun );
+        
         glfwSwapInterval( vsync );
         
-        glfwMakeContextCurrent( window );
+        glfwMakeContextCurrent( this->window );
     }
     
-    bool SGE_GLFW::PollEvents( )
+    void SGE_GLFW::PollEvents( )
     {
         glfwPollEvents( );
-        
-        return true;
     }
     
     void SGE_GLFW::SwapBuffers( )
@@ -89,6 +96,23 @@ namespace SonarGameEngine
     void SGE_GLFW::CleanUp( )
     {
         glfwTerminate( );
+    }
+    
+    bool SGE_GLFW::WindowIsOpen( )
+    {
+        if ( glfwWindowShouldClose( this->window ) )
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    
+    void SGE_GLFW::CloseWindow( )
+    {
+        glfwSetWindowShouldClose( window, GL_TRUE );
     }
 }
 #endif

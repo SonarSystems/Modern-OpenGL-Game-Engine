@@ -8,6 +8,8 @@
 
 #include "CoreFramework.hpp"
 
+#include <iostream>
+
 namespace SonarGameEngine
 {
     CoreFramework::CoreFramework( )
@@ -20,11 +22,9 @@ namespace SonarGameEngine
         frameworkObject.Init( );
     }
     
-    bool CoreFramework::PollEvents( )
+    void CoreFramework::PollEvents( )
     {
-        return frameworkObject.PollEvents( );
-        
-        return true;
+        frameworkObject.PollEvents( );
     }
     
     void CoreFramework::SwapBuffers( )
@@ -35,5 +35,15 @@ namespace SonarGameEngine
     void CoreFramework::CleanUp( )
     {
         frameworkObject.CleanUp( );
+    }
+    
+    bool CoreFramework::WindowIsOpen( )
+    {
+        return frameworkObject.WindowIsOpen( );
+    }
+    
+    void CoreFramework::CloseWindow( )
+    {
+        frameworkObject.CloseWindow( );
     }
 }

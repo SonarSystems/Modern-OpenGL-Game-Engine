@@ -21,6 +21,8 @@ namespace SonarGameEngine
     
     void SGE_SDL::Init( )
     {
+        this->isOpen = true;
+        
         int windowResizable = 0;
         
         if ( coreSettings->GetWindowResizable( ) )
@@ -76,17 +78,15 @@ namespace SonarGameEngine
         this->context = SDL_GL_CreateContext( this->window );
     }
     
-    bool SGE_SDL::PollEvents( )
+    void SGE_SDL::PollEvents( )
     {
         if ( SDL_PollEvent( &this->windowEvent ) )
         {
             if ( this->windowEvent.type == SDL_QUIT )
             {
-                return false;
+                isOpen = false;
             }
-        }
-        
-        return true;
+        }        
     }
     
     void SGE_SDL::SwapBuffers( )
@@ -99,6 +99,16 @@ namespace SonarGameEngine
         SDL_GL_DeleteContext( this->context );
         SDL_DestroyWindow( this->window );
         SDL_Quit( );
+    }
+    
+    bool SGE_SDL::WindowIsOpen( )
+    {
+        return this->isOpen;
+    }
+    
+    void SGE_SDL::CloseWindow( )
+    {
+        this->isOpen = false;
     }
 }
 

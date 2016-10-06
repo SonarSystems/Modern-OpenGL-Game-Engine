@@ -6,7 +6,7 @@
 //  Copyright © 2016 Sonar Systems. All rights reserved.
 //
 
-#include "FrameworkInterface.h"
+#include "FrameworkInterface.hpp"
 
 namespace SonarGameEngine
 {

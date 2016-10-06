@@ -8,8 +8,8 @@
 
 #pragma once
 
-#include "FrameworkInterface.h"
-#include "DEFINITIONS.h"
+#include "FrameworkInterface.hpp"
+#include "DEFINITIONS.hpp"
 
 #ifdef SGE__SDL
     #include "SGE_SDL.hpp"
@@ -28,12 +28,16 @@ namespace SonarGameEngine
         
         void Init( ) override;
         
-        bool PollEvents( ) override;
+        void PollEvents( ) override;
         
         void SwapBuffers( ) override;
         
         void CleanUp( ) override;
-                
+        
+        bool WindowIsOpen( ) override;
+        
+        void CloseWindow( ) override;
+        
     private:
 #ifdef SGE__SDL
         SGE_SDL frameworkObject;

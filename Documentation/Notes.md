@@ -1,5 +1,10 @@
 Settings Class<br />
--Frame rate
+-Fullscreen <br />
+-Window Title<br />
+-VSYNC<br />
+
+
+
 -Fix window not closing<br />
 
 

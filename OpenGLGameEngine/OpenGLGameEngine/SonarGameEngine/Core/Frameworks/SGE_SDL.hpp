@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "DEFINITIONS.h"
+#include "DEFINITIONS.hpp"
 
 #ifdef SGE__SDL
 
@@ -26,16 +26,22 @@ namespace SonarGameEngine
         
         void Init( ) override;
                 
-        bool PollEvents( ) override;
+        void PollEvents( ) override;
         
         void SwapBuffers( ) override;
         
         void CleanUp( ) override;
         
+        bool WindowIsOpen( ) override;
+        
+        void CloseWindow( ) override;
+        
     private:
         SDL_Window *window;
         SDL_GLContext context;
         SDL_Event windowEvent;
+        
+        bool isOpen;
     };
 }
 

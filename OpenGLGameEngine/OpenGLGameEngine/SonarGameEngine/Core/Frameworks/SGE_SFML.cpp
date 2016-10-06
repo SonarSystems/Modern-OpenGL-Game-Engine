@@ -49,7 +49,7 @@ namespace SonarGameEngine
         window->setVerticalSyncEnabled( coreSettings->GetVSync( ) );
     }
     
-    bool SGE_SFML::PollEvents( )
+    void SGE_SFML::PollEvents( )
     {
         sf::Event windowEvent;
         
@@ -58,13 +58,11 @@ namespace SonarGameEngine
             switch ( windowEvent.type )
             {
                 case sf::Event::Closed:
-                    return false;
+                    this->window->close( );
                     
                     break;
             }
         }
-        
-        return true;
     }
     
     void SGE_SFML::SwapBuffers( )
@@ -73,6 +71,23 @@ namespace SonarGameEngine
     }
     
     void SGE_SFML::CleanUp( )
+    {
+        this->window->close( );
+    }
+    
+    bool SGE_SFML::WindowIsOpen( )
+    {
+        if ( this->window->isOpen( ) == true )
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    void SGE_SFML::CloseWindow( )
     {
         this->window->close( );
     }
