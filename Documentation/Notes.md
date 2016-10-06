@@ -1,15 +1,4 @@
-<<<<<<< HEAD
-Settings Class<br />
--Fullscreen <br />
--Window Title<br />
--VSYNC<br />
-
-
-
--Fix window not closing<br />
-=======
 Rename SGE_GLFW to FrameworkGLFW, do the same for SDL and SFML<br />
->>>>>>> origin/master
 
 CoreEvents hpp and cpp in the core root folder<br />
 
