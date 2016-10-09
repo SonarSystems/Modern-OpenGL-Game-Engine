@@ -36,15 +36,11 @@ namespace SonarGameEngine
             fullscreen = glfwGetPrimaryMonitor( );
         }
         
-        GLint vsync;
+        GLint vsync = 0;
         
         if ( coreSettings->GetVSync( ) )
         {
             vsync = 1;
-        }
-        else
-        {
-            vsync = 0;
         }
         
         // Set all the required options for GLFW
@@ -98,16 +94,9 @@ namespace SonarGameEngine
         glfwTerminate( );
     }
     
-    bool SGE_GLFW::WindowIsOpen( )
+    bool SGE_GLFW::WindowIsOpen( ) const
     {
-        if ( glfwWindowShouldClose( this->window ) )
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+       return !glfwWindowShouldClose(this->window);
     }
     
     void SGE_GLFW::CloseWindow( )

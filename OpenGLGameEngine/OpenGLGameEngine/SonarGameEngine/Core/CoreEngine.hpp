@@ -43,7 +43,7 @@ namespace SonarGameEngine
         void CleanUp( );
         
         // is the window still open. Returns true if it is
-        bool WindowIsOpen( );
+        bool WindowIsOpen( ) const;
         
     private:
         CoreFramework coreFramework;

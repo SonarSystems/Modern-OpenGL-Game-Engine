@@ -30,7 +30,7 @@ namespace SonarGameEngine
         
         virtual void CleanUp( ) = 0;
 
-        virtual bool WindowIsOpen( ) = 0;
+        virtual bool WindowIsOpen( ) const = 0;
         
         virtual void CloseWindow( ) = 0;
 

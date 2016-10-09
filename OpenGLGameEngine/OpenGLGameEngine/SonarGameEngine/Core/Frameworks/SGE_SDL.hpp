@@ -12,7 +12,7 @@
 
 #ifdef SGE__SDL
 
-#include "FrameworkInterface.h"
+#include "FrameworkInterface.hpp"
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_opengl.h>
@@ -32,7 +32,7 @@ namespace SonarGameEngine
         
         void CleanUp( ) override;
         
-        bool WindowIsOpen( ) override;
+        bool WindowIsOpen( ) const override;
         
         void CloseWindow( ) override;
         
