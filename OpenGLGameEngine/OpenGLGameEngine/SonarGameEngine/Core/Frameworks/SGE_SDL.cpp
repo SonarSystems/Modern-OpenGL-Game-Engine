@@ -44,15 +44,11 @@ namespace SonarGameEngine
             multiSampleBuffer = 1;
         }
         
-        GLint vsync;
+        GLint vsync = 0;
         
         if ( coreSettings->GetVSync( ) )
         {
             vsync = 1;
-        }
-        else
-        {
-            vsync = 0;
         }
         
         SDL_Init( SDL_INIT_EVERYTHING );
@@ -101,7 +97,7 @@ namespace SonarGameEngine
         SDL_Quit( );
     }
     
-    bool SGE_SDL::WindowIsOpen( )
+    bool SGE_SDL::WindowIsOpen( ) const
     {
         return this->isOpen;
     }

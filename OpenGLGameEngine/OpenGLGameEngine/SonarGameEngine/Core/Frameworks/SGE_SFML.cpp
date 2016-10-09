@@ -46,7 +46,7 @@ namespace SonarGameEngine
         
         this->window = new sf::Window(sf::VideoMode(coreSettings->GetWindowWidth(), coreSettings->GetWindowHeight(), 32), coreSettings->GetWindowTitle( ).c_str( ), sf::Style::Titlebar | sf::Style::Close | windowResizable | windowFullscreen, settings);
         
-        window->setVerticalSyncEnabled( coreSettings->GetVSync( ) );
+        window->setVerticalSyncEnabled( coreSettings->GetVSync( ) == GL_TRUE );
     }
     
     void SGE_SFML::PollEvents( )
@@ -75,16 +75,9 @@ namespace SonarGameEngine
         this->window->close( );
     }
     
-    bool SGE_SFML::WindowIsOpen( )
+    bool SGE_SFML::WindowIsOpen( ) const
     {
-        if ( this->window->isOpen( ) == true )
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+       return this->window->isOpen();
     }
     
     void SGE_SFML::CloseWindow( )

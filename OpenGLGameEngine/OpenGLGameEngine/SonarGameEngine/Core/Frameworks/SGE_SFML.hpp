@@ -12,7 +12,7 @@
 
 #ifdef SGE__SFML
 
-#include "FrameworkInterface.h"
+#include "FrameworkInterface.hpp"
 
 #include <SFML/window.hpp>
 
@@ -31,7 +31,7 @@ namespace SonarGameEngine
         
         void CleanUp( ) override;
         
-        bool WindowIsOpen( ) override;
+        bool WindowIsOpen( ) const override;
         
         void CloseWindow( ) override;
         

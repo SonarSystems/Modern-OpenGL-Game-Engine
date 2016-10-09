@@ -8,7 +8,7 @@
 
 #pragma once
 
-// SGE__SDL, SGE__SFML, SGE_GLFW
+// SGE__SDL, SGE__SFML, SGE__GLFW
 #define SGE__GLFW
 
 #define USING_NAMESPACE_SGE using namespace SonarGameEngine

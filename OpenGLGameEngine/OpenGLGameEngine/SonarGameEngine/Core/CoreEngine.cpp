@@ -65,7 +65,7 @@ namespace SonarGameEngine
         coreFramework.CleanUp( );
     }
     
-    bool CoreEngine::WindowIsOpen( )
+    bool CoreEngine::WindowIsOpen( ) const
     {
         return coreFramework.WindowIsOpen( );
     }
