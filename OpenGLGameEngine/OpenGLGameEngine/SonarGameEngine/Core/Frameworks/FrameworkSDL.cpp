@@ -1,12 +1,12 @@
 //
-//  SGE_SDL.cpp
+//  FrameworkSDL.cpp
 //  OpenGLGameEngine
 //
 //  Created by Sonar Systems on 18/09/2016.
 //  Copyright © 2016 Sonar Systems. All rights reserved.
 //
 
-#include "SGE_SDL.hpp"
+#include "FrameworkSDL.hpp"
 
 #ifdef SGE__SDL
 
@@ -14,12 +14,12 @@
 
 namespace SonarGameEngine
 {
-    SGE_SDL::SGE_SDL( )
+    FrameworkSDL::FrameworkSDL( )
     {
         
     }
     
-    void SGE_SDL::Init( )
+    void FrameworkSDL::Init( )
     {
         this->isOpen = true;
         
@@ -74,35 +74,52 @@ namespace SonarGameEngine
         this->context = SDL_GL_CreateContext( this->window );
     }
     
-    void SGE_SDL::PollEvents( )
+    void FrameworkSDL::PollEvents( )
     {
+        std::cout << SDLK_a << std::endl;
+        
         if ( SDL_PollEvent( &this->windowEvent ) )
         {
-            if ( this->windowEvent.type == SDL_QUIT )
-            {
-                isOpen = false;
+            switch( windowEvent.type ){
+                    /* Keyboard event */
+                    /* Pass the event data onto PrintKeyInfo() */
+                case SDL_KEYDOWN:
+                case SDL_KEYUP:
+                    std::cout << "SDL Input" << std::endl;
+                    
+                    break;
+                    
+                    /* SDL_QUIT event (window close) */
+                case SDL_QUIT:
+                
+                    this->isOpen = false;
+                    
+                    break;
+                    
+                default:
+                    break;
             }
         }        
     }
     
-    void SGE_SDL::SwapBuffers( )
+    void FrameworkSDL::SwapBuffers( )
     {
         SDL_GL_SwapWindow( this->window );
     }
     
-    void SGE_SDL::CleanUp( )
+    void FrameworkSDL::CleanUp( )
     {
         SDL_GL_DeleteContext( this->context );
         SDL_DestroyWindow( this->window );
         SDL_Quit( );
     }
     
-    bool SGE_SDL::WindowIsOpen( ) const
+    bool FrameworkSDL::WindowIsOpen( ) const
     {
         return this->isOpen;
     }
     
-    void SGE_SDL::CloseWindow( )
+    void FrameworkSDL::CloseWindow( )
     {
         this->isOpen = false;
     }

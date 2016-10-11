@@ -14,36 +14,36 @@ namespace SonarGameEngine
 {
     CoreFramework::CoreFramework( )
     {
-        frameworkObject.Construct( );
+        this->frameworkObject.Construct( );
     }
     
     void CoreFramework::Init( )
     {
-        frameworkObject.Init( );
+        this->frameworkObject.Init( );
     }
     
     void CoreFramework::PollEvents( )
     {
-        frameworkObject.PollEvents( );
+        this->frameworkObject.PollEvents( );
     }
     
     void CoreFramework::SwapBuffers( )
     {
-        frameworkObject.SwapBuffers( );
+        this->frameworkObject.SwapBuffers( );
     }
     
     void CoreFramework::CleanUp( )
     {
-        frameworkObject.CleanUp( );
+        this->frameworkObject.CleanUp( );
     }
     
     bool CoreFramework::WindowIsOpen( ) const
     {
-        return frameworkObject.WindowIsOpen( );
+        return this->frameworkObject.WindowIsOpen( );
     }
     
     void CoreFramework::CloseWindow( )
     {
-        frameworkObject.CloseWindow( );
+        this->frameworkObject.CloseWindow( );
     }
 }

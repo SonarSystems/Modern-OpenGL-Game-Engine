@@ -1,5 +1,5 @@
 //
-//  SGE_SFML.hpp
+//  SGE_GLFW.hpp
 //  OpenGLGameEngine
 //
 //  Created by Sonar Systems on 18/09/2016.
@@ -10,18 +10,18 @@
 
 #include "DEFINITIONS.hpp"
 
-#ifdef SGE__SFML
+#ifdef SGE__GLFW
 
 #include "FrameworkInterface.hpp"
 
-#include <SFML/window.hpp>
+#include <GLFW/glfw3.h>
 
 namespace SonarGameEngine
 {
-    class SGE_SFML: public FrameworkInterface
+    class FrameworkGLFW: public FrameworkInterface
     {
     public:
-        SGE_SFML( );
+        FrameworkGLFW( );
         
         void Init( ) override;
                 
@@ -35,9 +35,10 @@ namespace SonarGameEngine
         
         void CloseWindow( ) override;
         
+        static void KeyCallback( GLFWwindow *window, int key, int scancode, int action, int mods );
+            
     private:
-        sf::Window *window;
+        GLFWwindow *window;
     };
 }
-
 #endif

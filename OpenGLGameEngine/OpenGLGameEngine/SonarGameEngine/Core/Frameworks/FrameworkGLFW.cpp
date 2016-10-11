@@ -1,12 +1,12 @@
 //
-//  SGE_GLFW.cpp
+//  FrameworkGLFW.cpp
 //  OpenGLGameEngine
 //
 //  Created by Sonar Systems on 18/09/2016.
 //  Copyright © 2016 Sonar Systems. All rights reserved.
 //
 
-#include "SGE_GLFW.hpp"
+#include "FrameworkGLFW.hpp"
 
 #ifdef SGE__GLFW
 
@@ -14,7 +14,7 @@
 
 namespace SonarGameEngine
 {
-    SGE_GLFW::SGE_GLFW( )
+    FrameworkGLFW::FrameworkGLFW( )
     {
         
     }
@@ -24,7 +24,7 @@ namespace SonarGameEngine
         glfwSetWindowShouldClose( window, GL_TRUE );
     }
     
-    void SGE_GLFW::Init( )
+    void FrameworkGLFW::Init( )
     {
         // Init GLFW
         glfwInit( );
@@ -72,6 +72,8 @@ namespace SonarGameEngine
             //return EXIT_FAILURE;
         }
         
+        glfwSetKeyCallback( this->window, FrameworkGLFW::KeyCallback );
+        
         glfwSetWindowCloseCallback( this->window, cbfun );
         
         glfwSwapInterval( vsync );
@@ -79,29 +81,36 @@ namespace SonarGameEngine
         glfwMakeContextCurrent( this->window );
     }
     
-    void SGE_GLFW::PollEvents( )
+    void FrameworkGLFW::PollEvents( )
     {
         glfwPollEvents( );
     }
     
-    void SGE_GLFW::SwapBuffers( )
+    void FrameworkGLFW::SwapBuffers( )
     {
         glfwSwapBuffers( this->window );
     }
     
-    void SGE_GLFW::CleanUp( )
+    void FrameworkGLFW::CleanUp( )
     {
         glfwTerminate( );
     }
     
-    bool SGE_GLFW::WindowIsOpen( ) const
+    bool FrameworkGLFW::WindowIsOpen( ) const
     {
        return !glfwWindowShouldClose(this->window);
     }
     
-    void SGE_GLFW::CloseWindow( )
+    void FrameworkGLFW::CloseWindow( )
     {
         glfwSetWindowShouldClose( window, GL_TRUE );
+    }
+    
+    void FrameworkGLFW::KeyCallback( GLFWwindow *window, int key, int scancode, int action, int mods )
+    {
+        std::cout << GLFW_KEY_A + 32 << std::endl;
+        
+        std::cout << "Input" << std::endl;
     }
 }
 #endif

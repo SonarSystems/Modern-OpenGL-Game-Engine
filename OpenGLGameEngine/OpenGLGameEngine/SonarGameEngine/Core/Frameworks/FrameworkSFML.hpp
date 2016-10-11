@@ -1,5 +1,5 @@
 //
-//  SGE_SDL.hpp
+//  SGE_SFML.hpp
 //  OpenGLGameEngine
 //
 //  Created by Sonar Systems on 18/09/2016.
@@ -10,19 +10,18 @@
 
 #include "DEFINITIONS.hpp"
 
-#ifdef SGE__SDL
+#ifdef SGE__SFML
 
 #include "FrameworkInterface.hpp"
 
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_opengl.h>
+#include <SFML/window.hpp>
 
 namespace SonarGameEngine
 {
-    class SGE_SDL: public FrameworkInterface
+    class FrameworkSFML: public FrameworkInterface
     {
     public:
-        SGE_SDL( );
+        FrameworkSFML( );
         
         void Init( ) override;
                 
@@ -37,11 +36,7 @@ namespace SonarGameEngine
         void CloseWindow( ) override;
         
     private:
-        SDL_Window *window;
-        SDL_GLContext context;
-        SDL_Event windowEvent;
-        
-        bool isOpen;
+        sf::Window *window;
     };
 }
 

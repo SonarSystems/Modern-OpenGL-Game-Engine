@@ -16,11 +16,11 @@
 #include <GL/glew.h>
 
 #ifdef SGE__SDL
-    #include "Frameworks/SGE_SDL.hpp"
+    #include "Frameworks/FrameworkSDL.hpp"
 #elif defined(SGE__SFML)
-    #include "Frameworks/SGE_SFML.hpp"
+    #include "Frameworks/FrameworkSFML.hpp"
 #elif defined(SGE__GLFW)
-    #include "Frameworks/SGE_GLFW.hpp"
+    #include "Frameworks/FrameworkGLFW.hpp"
 #endif
 
 #include "Frameworks/CoreFramework.hpp"
@@ -44,6 +44,8 @@ namespace SonarGameEngine
         
         // is the window still open. Returns true if it is
         bool WindowIsOpen( ) const;
+        
+        CoreSettings *getCoreSettings() { return this->coreSettings; }
         
     private:
         CoreFramework coreFramework;

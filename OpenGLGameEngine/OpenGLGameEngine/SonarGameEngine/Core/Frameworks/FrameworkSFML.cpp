@@ -1,12 +1,12 @@
 //
-//  SGE_SFML.cpp
+//  FrameworkSFML.cpp
 //  OpenGLGameEngine
 //
 //  Created by Sonar Systems on 18/09/2016.
 //  Copyright © 2016 Sonar Systems. All rights reserved.
 //
 
-#include "SGE_SFML.hpp"
+#include "FrameworkSFML.hpp"
 
 #ifdef SGE__SFML
 
@@ -14,12 +14,12 @@
 
 namespace SonarGameEngine
 {
-    SGE_SFML::SGE_SFML( )
+    FrameworkSFML::FrameworkSFML( )
     {
         
     }
     
-    void SGE_SFML::Init( )
+    void FrameworkSFML::Init( )
     {
         
         int windowResizable = 0;
@@ -49,38 +49,68 @@ namespace SonarGameEngine
         window->setVerticalSyncEnabled( coreSettings->GetVSync( ) == GL_TRUE );
     }
     
-    void SGE_SFML::PollEvents( )
+    void FrameworkSFML::PollEvents( )
     {
         sf::Event windowEvent;
         
+        //sf::Event::TextEntered
+        //std::cout << sf::Keyboard::A << std::endl;
+        
         while ( this->window->pollEvent( windowEvent ) )
         {
+            if (windowEvent.type == sf::Event::TextEntered)
+            {
+                if (windowEvent.text.unicode < 128)
+                    std::cout << "ASCII character typed: " << static_cast<char>(windowEvent.text.unicode) << std::endl;
+            }
+            
             switch ( windowEvent.type )
             {
                 case sf::Event::Closed:
                     this->window->close( );
                     
                     break;
+                    
+                case sf::Event::KeyPressed:
+                    //std::cout << "Key has been pressed" << std::endl;
+                    //coreEvents.SetKeyboardPressed(true);
+                    
+                    std::cout << windowEvent.text.unicode << std::endl;
+                    
+                    switch ( windowEvent.key.code )
+                    {
+                        case sf::Keyboard::A:
+                            //std::cout << "A" << std::endl;
+                            
+                            break;
+                            
+                        case sf::Keyboard::B:
+                            //std::cout << "B" << std::endl;
+                            
+                            break;
+                    }
+                    
+                    break;
             }
         }
     }
     
-    void SGE_SFML::SwapBuffers( )
+    void FrameworkSFML::SwapBuffers( )
     {
         this->window->display( );
     }
     
-    void SGE_SFML::CleanUp( )
+    void FrameworkSFML::CleanUp( )
     {
         this->window->close( );
     }
     
-    bool SGE_SFML::WindowIsOpen( ) const
+    bool FrameworkSFML::WindowIsOpen( ) const
     {
        return this->window->isOpen();
     }
     
-    void SGE_SFML::CloseWindow( )
+    void FrameworkSFML::CloseWindow( )
     {
         this->window->close( );
     }

@@ -33,7 +33,7 @@ namespace SonarGameEngine
         virtual bool WindowIsOpen( ) const = 0;
         
         virtual void CloseWindow( ) = 0;
-
+        
     protected:
         CoreSettings *coreSettings;
     };

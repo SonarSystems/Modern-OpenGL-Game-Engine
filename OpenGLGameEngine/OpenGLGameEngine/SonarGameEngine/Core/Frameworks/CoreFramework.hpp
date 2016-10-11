@@ -12,11 +12,11 @@
 #include "DEFINITIONS.hpp"
 
 #ifdef SGE__SDL
-    #include "SGE_SDL.hpp"
+    #include "FrameworkSDL.hpp"
 #elif defined(SGE__SFML)
-    #include "SGE_SFML.hpp"
+    #include "FrameworkSFML.hpp"
 #elif defined(SGE__GLFW)
-    #include "SGE_GLFW.hpp"
+    #include "FrameworkGLFW.hpp"
 #endif
 
 namespace SonarGameEngine
@@ -40,11 +40,11 @@ namespace SonarGameEngine
         
     private:
 #ifdef SGE__SDL
-        SGE_SDL frameworkObject;
+        FrameworkSDL frameworkObject;
 #elif defined(SGE__SFML)
-        SGE_SFML frameworkObject;
+        FrameworkSFML frameworkObject;
 #elif defined(SGE__GLFW)
-        SGE_GLFW frameworkObject;
+        FrameworkGLFW frameworkObject;
 #endif        
     };
 }
