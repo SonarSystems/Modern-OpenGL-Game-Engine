@@ -8,7 +8,9 @@ namespace SonarGameEngine
 {
     EventsGLFW::EventsGLFW( )
     {
+        glfwSetKeyCallback( this->window, FrameworkGLFW::KeyCallback );
         
+        glfwSetWindowCloseCallback( this->window, cbfun );
     }
     
     void EventsGLFW::KeyCallback( GLFWwindow *window, int key, int scancode, int action, int mods )

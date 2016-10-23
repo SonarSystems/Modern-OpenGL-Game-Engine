@@ -76,8 +76,6 @@ namespace SonarGameEngine
     
     void FrameworkSDL::PollEvents( )
     {
-        std::cout << SDLK_a << std::endl;
-        
         if ( SDL_PollEvent( &this->windowEvent ) )
         {
             switch( windowEvent.type ){
@@ -85,7 +83,8 @@ namespace SonarGameEngine
                     /* Pass the event data onto PrintKeyInfo() */
                 case SDL_KEYDOWN:
                 case SDL_KEYUP:
-                    std::cout << "SDL Input" << std::endl;
+                    std::cout << SDL_GetKeyName( SDLK_KP_4 ) << std::endl;
+                    std::cout << SDL_GetKeyName( windowEvent.key.keysym.sym ) << std::endl;
                     
                     break;
                     

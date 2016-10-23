@@ -10,3 +10,5 @@
 
 #include "DEFINITIONS.hpp"
 #include "Core/CoreEngine.hpp"
+
+#include "Core/Frameworks/Events/KEYBOARD DEFINITIONS.hpp"

@@ -72,9 +72,7 @@ namespace SonarGameEngine
             //return EXIT_FAILURE;
         }
         
-        glfwSetKeyCallback( this->window, FrameworkGLFW::KeyCallback );
         
-        glfwSetWindowCloseCallback( this->window, cbfun );
         
         glfwSwapInterval( vsync );
         
@@ -110,7 +108,7 @@ namespace SonarGameEngine
     {
         std::cout << GLFW_KEY_A + 32 << std::endl;
         
-        std::cout << "Input" << std::endl;
+        std::cout << key << std::endl;
     }
 }
 #endif

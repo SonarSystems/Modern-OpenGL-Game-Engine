@@ -54,7 +54,7 @@ namespace SonarGameEngine
         sf::Event windowEvent;
         
         //sf::Event::TextEntered
-        //std::cout << sf::Keyboard::A << std::endl;
+        //std::cout << sf::Keyboard::LBracket << std::endl;
         
         while ( this->window->pollEvent( windowEvent ) )
         {
