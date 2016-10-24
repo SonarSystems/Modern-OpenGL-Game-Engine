@@ -72,7 +72,7 @@ namespace SonarGameEngine
             //return EXIT_FAILURE;
         }
         
-        
+        glfwSetKeyCallback( window, KeyCallback );
         
         glfwSwapInterval( vsync );
         
@@ -106,9 +106,16 @@ namespace SonarGameEngine
     
     void FrameworkGLFW::KeyCallback( GLFWwindow *window, int key, int scancode, int action, int mods )
     {
-        std::cout << GLFW_KEY_A + 32 << std::endl;
+        CoreEvents *tempEventsObject = CoreEvents::getInstance( );
         
-        std::cout << key << std::endl;
+        if ( GLFW_PRESS == action )
+        {
+            tempEventsObject->SetKeyboardStatus( KEYSTATUS::PRESSED );
+        }
+        else if ( GLFW_RELEASE == action )
+        {
+            tempEventsObject->SetKeyboardStatus( KEYSTATUS::RELEASED );
+        }
     }
 }
 #endif

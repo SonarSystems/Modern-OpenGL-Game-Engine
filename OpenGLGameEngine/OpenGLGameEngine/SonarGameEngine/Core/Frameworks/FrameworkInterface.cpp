@@ -13,5 +13,6 @@ namespace SonarGameEngine
     void FrameworkInterface::Construct( )
     {
         coreSettings = CoreSettings::getInstance( );
+        coreEvents = CoreEvents::getInstance( );
     }
 }

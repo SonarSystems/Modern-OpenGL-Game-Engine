@@ -14,6 +14,7 @@
 #include <vector>
 
 #include "../CoreSettings.hpp"
+#include "Events/CoreEvents.hpp"
 
 namespace SonarGameEngine
 {
@@ -36,5 +37,8 @@ namespace SonarGameEngine
         
     protected:
         CoreSettings *coreSettings;
+
+        CoreEvents *coreEvents;
+        
     };
 }

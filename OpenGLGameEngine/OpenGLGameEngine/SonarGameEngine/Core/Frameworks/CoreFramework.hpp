@@ -45,6 +45,7 @@ namespace SonarGameEngine
         FrameworkSFML frameworkObject;
 #elif defined(SGE__GLFW)
         FrameworkGLFW frameworkObject;
-#endif        
+#endif
+        
     };
 }

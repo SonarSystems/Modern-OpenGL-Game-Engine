@@ -18,31 +18,35 @@ namespace SonarGameEngine
     
     CoreEvents::CoreEvents( )
     {
-        this->keyboardStatus = SGE_KEY_NO_STATE;
+        this->keyboardStatus = KEYSTATUS::NO_STATE;
         
         this->eventsObject.Construct( );
         
         for ( int i = 0; i < sizeof( *this->keysStatus ); i++ )
         {
-            this->keysStatus[i] = SGE_KEY_NO_STATE;
+            this->keysStatus[i] = KEYSTATUS::NO_STATE;
         }
         
-        this->eventsObject
+        //this->eventsObject
     }
     
-    bool CoreEvents::Keyboard( int keyStatus )
+    bool CoreEvents::CheckKeyboardStatus( int keyStatus )
     {
         if ( keyStatus == this->keyboardStatus )
         {
+            this->keyboardStatus = KEYSTATUS::NO_STATE;
+            
             return true;
         }
         else
         {
+            this->keyboardStatus = KEYSTATUS::NO_STATE;
+            
             return false;
         }
     }
     
-    bool CoreEvents::Keyboard( int keyStatus, int key )
+    bool CoreEvents::CheckKeyStatus( int keyStatus, int key )
     {
         if ( keyStatus == this->keysStatus[key] )
         {
@@ -52,5 +56,10 @@ namespace SonarGameEngine
         {
             return false;
         }
+    }
+    
+    void CoreEvents::SetKeyboardStatus( int keyboardStatus )
+    {
+        this->keyboardStatus = keyboardStatus;
     }
 }

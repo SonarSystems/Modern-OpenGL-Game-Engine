@@ -13,7 +13,7 @@
 namespace SonarGameEngine
 {
     CoreFramework::CoreFramework( )
-    {
+    {        
         this->frameworkObject.Construct( );
     }
     

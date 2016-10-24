@@ -15,6 +15,7 @@ namespace SonarGameEngine
     CoreEngine::CoreEngine( )
     {
         coreSettings = CoreSettings::getInstance( );
+        coreEvents = CoreEvents::getInstance( );
     }
     
     bool CoreEngine::Init( )

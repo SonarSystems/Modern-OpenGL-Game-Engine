@@ -33,8 +33,12 @@ namespace SonarGameEngine
             return sInstance;
         }
         
-        bool Keyboard( int keyStatus );
-        bool Keyboard( int keyStatus, int key );
+        
+        bool CheckKeyboardStatus( int keyStatus );
+        bool CheckKeyStatus( int keyStatus, int key );
+        
+        // sets the status of the keyboard
+        void SetKeyboardStatus( int keyboardStatus );
         
     private:
         CoreEvents( );
@@ -50,7 +54,7 @@ namespace SonarGameEngine
 #endif
         
         // has a key been pressed or released (reset the value of this key once checked)
-        bool keyboardStatus;
+        int keyboardStatus;
         
         int keysStatus[101];
     };
