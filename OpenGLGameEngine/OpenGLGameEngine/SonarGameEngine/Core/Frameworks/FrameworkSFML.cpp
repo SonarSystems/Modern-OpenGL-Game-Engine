@@ -60,8 +60,8 @@ namespace SonarGameEngine
         {
             if (windowEvent.type == sf::Event::TextEntered)
             {
-                if (windowEvent.text.unicode < 128)
-                    std::cout << "ASCII character typed: " << static_cast<char>(windowEvent.text.unicode) << std::endl;
+              //  if (windowEvent.text.unicode < 128)
+                //    std::cout << "ASCII character typed: " << static_cast<char>(windowEvent.text.unicode) << std::endl;
             }
             
             switch ( windowEvent.type )
@@ -75,7 +75,7 @@ namespace SonarGameEngine
                     //std::cout << "Key has been pressed" << std::endl;
                     //coreEvents.SetKeyboardPressed(true);
                     
-                    std::cout << windowEvent.text.unicode << std::endl;
+                  //  std::cout << windowEvent.text.unicode << std::endl;
                     
                     switch ( windowEvent.key.code )
                     {

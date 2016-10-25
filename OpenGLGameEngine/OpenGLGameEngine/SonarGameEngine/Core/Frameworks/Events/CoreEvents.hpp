@@ -39,6 +39,7 @@ namespace SonarGameEngine
         
         // sets the status of the keyboard
         void SetKeyboardStatus( int keyboardStatus );
+        void SetKeyStatus( int key, int keyStatus );
         
     private:
         CoreEvents( );

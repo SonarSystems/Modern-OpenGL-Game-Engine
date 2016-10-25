@@ -62,4 +62,10 @@ namespace SonarGameEngine
     {
         this->keyboardStatus = keyboardStatus;
     }
+    
+    void CoreEvents::SetKeyStatus( int key, int keyStatus )
+    {
+        
+        //this->keysStatus[key] = keyStatus;
+    }
 }
