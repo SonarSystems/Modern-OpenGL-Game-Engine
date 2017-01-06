@@ -41,6 +41,8 @@ namespace SonarGameEngine
         void SetKeyboardStatus( int keyboardStatus );
         void SetKeyStatus( int key, int keyStatus );
         
+        int GetKeyNumber( int key ) override;
+        
     private:
         CoreEvents( );
         

@@ -8,6 +8,8 @@
 
 #include <SFML/window.hpp>
 
+#include <map>
+
 namespace SonarGameEngine
 {
     class EventsSFML: public EventsInterface

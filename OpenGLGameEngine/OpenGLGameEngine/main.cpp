@@ -12,9 +12,19 @@ int main( int argc, char *argv[] )
     
     while ( ce.WindowIsOpen( ) )
     {
-        std::cout << KEYS::C << std::endl;
+        //std::cout << KEYS::C << std::endl;
         
-        //std::cout << ce.getEvents( )->CheckKeyboardStatus( KEYSTATUS::PRESSED ) << std::endl;
+        //std::cout << ce.getEvents()->GetKeyNumber(SDLK_a) << std::endl;
+        
+        if (ce.getEvents( )->CheckKeyboardStatus( KEYSTATUS::PRESSED ))
+        {
+            if (ce.getEvents( )->CheckKeyStatus(KEYSTATUS::PRESSED, KEYS::A))
+            {
+                std::cout << "A pressed" << std::endl;
+            }
+        }
+        
+        
         
         /*
         if ( ce.getEvents().Keyboard().Pressed( ) )

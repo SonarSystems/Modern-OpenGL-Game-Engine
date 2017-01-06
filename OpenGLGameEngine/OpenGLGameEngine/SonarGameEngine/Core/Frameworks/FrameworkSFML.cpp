@@ -56,6 +56,9 @@ namespace SonarGameEngine
         //sf::Event::TextEntered
         //std::cout << sf::Keyboard::LBracket << std::endl;
         
+        
+        
+        
         while ( this->window->pollEvent( windowEvent ) )
         {
             if (windowEvent.type == sf::Event::TextEntered)
@@ -74,6 +77,7 @@ namespace SonarGameEngine
                 case sf::Event::KeyPressed:
                     //std::cout << "Key has been pressed" << std::endl;
                     //coreEvents.SetKeyboardPressed(true);
+                    //coreEvents->SetKeyboardStatus(KEYSTATUS::PRESSED);
                     
                   //  std::cout << windowEvent.text.unicode << std::endl;
                     

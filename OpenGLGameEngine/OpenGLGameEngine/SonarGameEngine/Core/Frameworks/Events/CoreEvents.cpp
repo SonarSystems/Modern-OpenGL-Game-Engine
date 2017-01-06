@@ -18,13 +18,13 @@ namespace SonarGameEngine
     
     CoreEvents::CoreEvents( )
     {
-        this->keyboardStatus = KEYSTATUS::NO_STATE;
+        this->keyboardStatus = KEYSTATUS::NOT_PRESSED;
         
         this->eventsObject.Construct( );
         
         for ( int i = 0; i < sizeof( *this->keysStatus ); i++ )
         {
-            this->keysStatus[i] = KEYSTATUS::NO_STATE;
+            this->keysStatus[i] = KEYSTATUS::NOT_PRESSED;
         }
         
         //this->eventsObject
@@ -34,13 +34,13 @@ namespace SonarGameEngine
     {
         if ( keyStatus == this->keyboardStatus )
         {
-            this->keyboardStatus = KEYSTATUS::NO_STATE;
+            //this->keyboardStatus = KEYSTATUS::NO_STATE;
             
             return true;
         }
         else
         {
-            this->keyboardStatus = KEYSTATUS::NO_STATE;
+            //this->keyboardStatus = KEYSTATUS::NO_STATE;
             
             return false;
         }
@@ -50,6 +50,8 @@ namespace SonarGameEngine
     {
         if ( keyStatus == this->keysStatus[key] )
         {
+            this->keysStatus[key] = KEYSTATUS::NOT_PRESSED;
+            
             return true;
         }
         else
@@ -64,8 +66,12 @@ namespace SonarGameEngine
     }
     
     void CoreEvents::SetKeyStatus( int key, int keyStatus )
+    {        
+        this->keysStatus[eventsObject.GetKeyNumber( key )] = keyStatus;
+    }
+    
+    int CoreEvents::GetKeyNumber( int key )
     {
-        
-        //this->keysStatus[key] = keyStatus;
+        return this->eventsObject.GetKeyNumber( key );
     }
 }

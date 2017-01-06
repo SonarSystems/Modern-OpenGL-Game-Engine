@@ -82,15 +82,24 @@ namespace SonarGameEngine
                     /* Keyboard event */
                     /* Pass the event data onto PrintKeyInfo() */
                 case SDL_KEYDOWN:
+                    this->coreEvents->SetKeyboardStatus( KEYSTATUS::PRESSED );
+                    this->coreEvents->SetKeyStatus(SDL_GetKeyFromScancode(windowEvent.key.keysym.scancode), KEYSTATUS::PRESSED);
+                    //std::cout << windowEvent.key.keysym.unused << std::endl;
+                    //std::cout << SDL_GetKeyFromScancode(windowEvent.key.keysym.scancode) << std::endl;
+
+                    break;
+                    
                 case SDL_KEYUP:
-                    std::cout << SDL_GetKeyName( SDLK_KP_4 ) << std::endl;
-                    std::cout << SDL_GetKeyName( windowEvent.key.keysym.sym ) << std::endl;
+                    this->coreEvents->SetKeyboardStatus( KEYSTATUS::RELEASED );
+                    this->coreEvents->SetKeyStatus(SDL_GetKeyFromScancode(windowEvent.key.keysym.scancode), KEYSTATUS::RELEASED);
+                    //std::cout << SDL_GetKeyName( SDLK_KP_4 ) << std::endl;
+                    //std::cout << SDL_GetKeyName( windowEvent.key.keysym.sym ) << std::endl;
+                    
                     
                     break;
                     
                     /* SDL_QUIT event (window close) */
                 case SDL_QUIT:
-                
                     this->isOpen = false;
                     
                     break;
