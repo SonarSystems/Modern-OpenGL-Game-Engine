@@ -12,29 +12,22 @@ int main( int argc, char *argv[] )
     
     while ( ce.WindowIsOpen( ) )
     {
-        //std::cout << KEYS::C << std::endl;
-        
-        //std::cout << ce.getEvents()->GetKeyNumber(SDLK_a) << std::endl;
-        
-        if (ce.getEvents( )->CheckKeyboardStatus( KEYSTATUS::PRESSED ))
+        if ( ce.getEvents( )->CheckKeyboardStatus( KEYSTATUS::KB_PRESSED ) )
         {
-            if (ce.getEvents( )->CheckKeyStatus(KEYSTATUS::PRESSED, KEYS::A))
+            if (ce.getEvents( )->CheckKeyStatus( KEYSTATUS::KB_PRESSED, KEYS::Up ) )
             {
                 std::cout << "A pressed" << std::endl;
             }
         }
-        
-        
-        
-        /*
-        if ( ce.getEvents().Keyboard().Pressed( ) )
+        else if ( ce.getEvents( )->CheckKeyboardStatus( KEYSTATUS::KB_RELEASED ) )
         {
-            if ( ce.getEvents().Keyboard().Key() == 'A' )
-            {
-                
-            }
+            std::cout << "Release" << std::endl;
         }
-        */
+        
+        if ( ce.getEvents()->CheckMouseButtonStatus( MOUSE_BUTTONS::MOUSEKEY_ANY, MOUSE_BUTTON_STATUS::MOUSEKEY_PRESSED ) )
+        {
+            std::cout << "Mouse Pressed" << std::endl;
+        }
         
         //std::cout << ce.getCoreSettings()->GetWindowTitle() << std::endl;
         ce.GameLoop( );

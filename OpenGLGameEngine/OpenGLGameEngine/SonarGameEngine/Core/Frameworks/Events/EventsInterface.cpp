@@ -13,4 +13,11 @@ namespace SonarGameEngine
         
         return itr->second;
     }
+    
+    int EventsInterface::GetMouseButtonNumber( int key )
+    {
+        std::multimap<int, int>::iterator itr = mouseKeyTranslations.find( key );
+        
+        return itr->second;
+    }
 }

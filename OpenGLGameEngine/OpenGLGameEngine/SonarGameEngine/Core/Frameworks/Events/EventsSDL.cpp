@@ -79,10 +79,10 @@ namespace SonarGameEngine
         this->keyTranslations.insert(std::pair<int, int>(SDLK_KP_MINUS, KEYS::Subtract));
         this->keyTranslations.insert(std::pair<int, int>(SDLK_KP_MULTIPLY, KEYS::Multiply));
         this->keyTranslations.insert(std::pair<int, int>(SDLK_KP_DIVIDE, KEYS::Divide));
-        this->keyTranslations.insert(std::pair<int, int>(SDLK_KP_4, KEYS::Left));
-        this->keyTranslations.insert(std::pair<int, int>(SDLK_KP_6, KEYS::Right));
-        this->keyTranslations.insert(std::pair<int, int>(SDLK_KP_8, KEYS::Up));
-        this->keyTranslations.insert(std::pair<int, int>(SDLK_KP_2, KEYS::Down));
+        this->keyTranslations.insert(std::pair<int, int>(SDLK_LEFT, KEYS::Left));
+        this->keyTranslations.insert(std::pair<int, int>(SDLK_RIGHT, KEYS::Right));
+        this->keyTranslations.insert(std::pair<int, int>(SDLK_UP, KEYS::Up));
+        this->keyTranslations.insert(std::pair<int, int>(SDLK_DOWN, KEYS::Down));
         this->keyTranslations.insert(std::pair<int, int>(SDLK_KP_0, KEYS::Numpad0));
         this->keyTranslations.insert(std::pair<int, int>(SDLK_KP_1, KEYS::Numpad1));
         this->keyTranslations.insert(std::pair<int, int>(SDLK_KP_2, KEYS::Numpad2));

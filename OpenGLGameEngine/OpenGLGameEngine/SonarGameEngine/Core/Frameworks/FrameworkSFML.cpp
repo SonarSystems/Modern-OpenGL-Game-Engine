@@ -61,12 +61,6 @@ namespace SonarGameEngine
         
         while ( this->window->pollEvent( windowEvent ) )
         {
-            if (windowEvent.type == sf::Event::TextEntered)
-            {
-              //  if (windowEvent.text.unicode < 128)
-                //    std::cout << "ASCII character typed: " << static_cast<char>(windowEvent.text.unicode) << std::endl;
-            }
-            
             switch ( windowEvent.type )
             {
                 case sf::Event::Closed:
@@ -75,24 +69,19 @@ namespace SonarGameEngine
                     break;
                     
                 case sf::Event::KeyPressed:
-                    //std::cout << "Key has been pressed" << std::endl;
-                    //coreEvents.SetKeyboardPressed(true);
-                    //coreEvents->SetKeyboardStatus(KEYSTATUS::PRESSED);
+                    this->coreEvents->SetKeyboardStatus( KEYSTATUS::KB_PRESSED );
+                    this->coreEvents->SetKeyStatus( windowEvent.key.code, KEYSTATUS::KB_PRESSED );
                     
-                  //  std::cout << windowEvent.text.unicode << std::endl;
+                    break;
                     
-                    switch ( windowEvent.key.code )
-                    {
-                        case sf::Keyboard::A:
-                            //std::cout << "A" << std::endl;
-                            
-                            break;
-                            
-                        case sf::Keyboard::B:
-                            //std::cout << "B" << std::endl;
-                            
-                            break;
-                    }
+                case sf::Event::KeyReleased:
+                    this->coreEvents->SetKeyboardStatus( KEYSTATUS::KB_RELEASED );
+                    this->coreEvents->SetKeyStatus( windowEvent.key.code, KEYSTATUS::KB_RELEASED );
+                    
+                    break;
+                    
+                case sf::Event::MouseButtonPressed:
+                    this->coreEvents->SetMouseButtonStatus( windowEvent.mouseButton.button, MOUSE_BUTTON_STATUS::MOUSEKEY_PRESSED );
                     
                     break;
             }

@@ -44,6 +44,7 @@
 		EE141CAD1D8D928F0013DFF2 /* OpenGLGameEngine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLGameEngine; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE141CB01D8D928F0013DFF2 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EE141CB81D8D92E50013DFF2 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		EE1812E61E240F6700B18A5A /* MOUSE DEFINITIONS.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "MOUSE DEFINITIONS.hpp"; sourceTree = "<group>"; };
 		EE2794E21DBD6674004F12DB /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../../../../usr/local/Cellar/glew/2.0.0/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
 		EE2794E41DBD6681004F12DB /* libglfw3.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw3.3.2.dylib; path = ../../../../../../../usr/local/Cellar/glfw3/3.2.1/lib/libglfw3.3.2.dylib; sourceTree = "<group>"; };
 		EE2794E61DBD668F004F12DB /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../../../usr/local/Cellar/sdl2/2.0.4/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
@@ -212,6 +213,7 @@
 				EEF512241DAD51310081A439 /* EventsSFML.cpp */,
 				EEF512251DAD51310081A439 /* EventsSFML.hpp */,
 				EED454AA1DB7E10E006260AD /* KEYBOARD DEFINITIONS.hpp */,
+				EE1812E61E240F6700B18A5A /* MOUSE DEFINITIONS.hpp */,
 			);
 			path = Events;
 			sourceTree = "<group>";

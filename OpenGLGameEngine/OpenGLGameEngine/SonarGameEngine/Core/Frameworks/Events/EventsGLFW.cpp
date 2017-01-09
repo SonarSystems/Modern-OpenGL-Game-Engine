@@ -79,10 +79,10 @@ namespace SonarGameEngine
         this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_KP_SUBTRACT, KEYS::Subtract));
         this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_KP_MULTIPLY, KEYS::Multiply));
         this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_KP_DIVIDE, KEYS::Divide));
-        this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_KP_4, KEYS::Left));
-        this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_KP_6, KEYS::Right));
-        this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_KP_8, KEYS::Up));
-        this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_KP_2, KEYS::Down));
+        this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_LEFT, KEYS::Left));
+        this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_RIGHT, KEYS::Right));
+        this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_UP, KEYS::Up));
+        this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_DOWN, KEYS::Down));
         this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_KP_0, KEYS::Numpad0));
         this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_KP_1, KEYS::Numpad1));
         this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_KP_2, KEYS::Numpad2));

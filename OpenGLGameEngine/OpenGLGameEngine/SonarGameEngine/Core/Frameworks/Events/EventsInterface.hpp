@@ -10,6 +10,7 @@
 #include <map>
 
 #include "KEYBOARD DEFINITIONS.hpp"
+#include "MOUSE DEFINITIONS.hpp"
 
 namespace SonarGameEngine
 {
@@ -19,12 +20,15 @@ namespace SonarGameEngine
         void Construct( );
         
         virtual int GetKeyNumber( int key );
+        
+        virtual int GetMouseButtonNumber( int key );
 
     protected:
         CoreSettings *coreSettings;
         
         std::multimap<int, int> keyTranslations;
         
+        std::multimap<int, int> mouseKeyTranslations;
         
     };
 }

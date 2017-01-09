@@ -111,7 +111,9 @@ namespace SonarGameEngine
         this->keyTranslations.insert(std::pair<int, int>(sf::Keyboard::F15, KEYS::F15));
         this->keyTranslations.insert(std::pair<int, int>(sf::Keyboard::Pause, KEYS::Pause));
         
-        
+        this->mouseKeyTranslations.insert( std::pair<int, int>( sf::Mouse::Left, MOUSE_BUTTONS::MOUSEKEY_LEFT ) );
+        this->mouseKeyTranslations.insert( std::pair<int, int>( sf::Mouse::Right, MOUSE_BUTTONS::MOUSEKEY_RIGHT ) );
+        this->mouseKeyTranslations.insert( std::pair<int, int>( sf::Mouse::Middle, MOUSE_BUTTONS::MOUSEKEY_MIDDLE ) );
         
     }
 }

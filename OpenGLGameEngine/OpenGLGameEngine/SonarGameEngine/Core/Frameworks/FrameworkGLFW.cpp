@@ -108,6 +108,7 @@ namespace SonarGameEngine
     {
         CoreEvents *tempEventsObject = CoreEvents::getInstance( );
         
+        
         if ( GLFW_PRESS == action )
         {
             tempEventsObject->SetKeyboardStatus( KEYSTATUS::PRESSED );
