@@ -84,6 +84,25 @@ namespace SonarGameEngine
                     this->coreEvents->SetMouseButtonStatus( windowEvent.mouseButton.button, MOUSE_BUTTON_STATUS::MOUSEKEY_PRESSED );
                     
                     break;
+                    
+                case sf::Event::MouseButtonReleased:
+                    this->coreEvents->SetMouseButtonStatus( windowEvent.mouseButton.button, MOUSE_BUTTON_STATUS::MOUSEKEY_RELEASED );
+                    
+                    break;
+                    
+                case sf::Event::MouseWheelMoved:
+                    if ( windowEvent.mouseWheelScroll.wheel == sf::Mouse::HorizontalWheel )
+                    {
+                        //std::cout << "X scroll" << std::endl;
+                        this->coreEvents->SetScrollOffset( windowEvent.mouseWheel.x, 0 );
+                    }
+                    else if ( windowEvent.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel )
+                    {
+                        //std::cout << "Y scroll" << std::endl;
+                        //this->coreEvents->SetScrollOffset( 0, windowEvent.mouseWheel.delta );
+                    }
+                    
+                    break;
             }
         }
     }

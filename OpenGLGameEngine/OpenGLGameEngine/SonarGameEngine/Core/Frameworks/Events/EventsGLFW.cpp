@@ -110,15 +110,9 @@ namespace SonarGameEngine
         this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_F15, KEYS::F15));
         this->keyTranslations.insert(std::pair<int, int>(GLFW_KEY_PAUSE, KEYS::Pause));
         
-     //   glfwSetKeyCallback( this->window, FrameworkGLFW::KeyCallback );
-       
-       // glfwSetWindowCloseCallback( this->window, cbfun );
-    }
-    
-    void EventsGLFW::KeyCallback( GLFWwindow *window, int key, int scancode, int action, int mods )
-    {
-       // if (key == GLFW_KEY_E && action == GLFW_PRESS)
-     //       activate_airship();
+        this->mouseKeyTranslations.insert( std::pair<int, int>( GLFW_MOUSE_BUTTON_LEFT, MOUSE_BUTTONS::MOUSEKEY_LEFT ) );
+        this->mouseKeyTranslations.insert( std::pair<int, int>( GLFW_MOUSE_BUTTON_RIGHT, MOUSE_BUTTONS::MOUSEKEY_RIGHT ) );
+        this->mouseKeyTranslations.insert( std::pair<int, int>( GLFW_MOUSE_BUTTON_MIDDLE, MOUSE_BUTTONS::MOUSEKEY_MIDDLE ) );
     }
 }
 #endif

@@ -82,15 +82,29 @@ namespace SonarGameEngine
                     /* Keyboard event */
                     /* Pass the event data onto PrintKeyInfo() */
                 case SDL_KEYDOWN:
-                    this->coreEvents->SetKeyboardStatus( KEYSTATUS::PRESSED );
-                    this->coreEvents->SetKeyStatus( SDL_GetKeyFromScancode( windowEvent.key.keysym.scancode ), KEYSTATUS::PRESSED );
+                    this->coreEvents->SetKeyboardStatus( KEYSTATUS::KB_PRESSED );
+                    this->coreEvents->SetKeyStatus( SDL_GetKeyFromScancode( windowEvent.key.keysym.scancode ), KEYSTATUS::KB_PRESSED );
 
                     break;
                     
                 case SDL_KEYUP:
-                    this->coreEvents->SetKeyboardStatus( KEYSTATUS::RELEASED );
-                    this->coreEvents->SetKeyStatus( SDL_GetKeyFromScancode( windowEvent.key.keysym.scancode ), KEYSTATUS::RELEASED );
+                    this->coreEvents->SetKeyboardStatus( KEYSTATUS::KB_PRESSED );
+                    this->coreEvents->SetKeyStatus( SDL_GetKeyFromScancode( windowEvent.key.keysym.scancode ), KEYSTATUS::KB_PRESSED );
                     
+                    break;
+                    
+                case SDL_MOUSEBUTTONDOWN:
+                    this->coreEvents->SetMouseButtonStatus( windowEvent.button.button, MOUSE_BUTTON_STATUS::MOUSEKEY_PRESSED );
+                    
+                    break;
+                    
+                case SDL_MOUSEBUTTONUP:
+                    this->coreEvents->SetMouseButtonStatus( windowEvent.button.button, MOUSE_BUTTON_STATUS::MOUSEKEY_RELEASED );
+                    
+                    break;
+                    
+                case SDL_MOUSEWHEEL:
+                    this->coreEvents->SetScrollOffset( windowEvent.wheel.x, windowEvent.wheel.y );
                     
                     break;
                     

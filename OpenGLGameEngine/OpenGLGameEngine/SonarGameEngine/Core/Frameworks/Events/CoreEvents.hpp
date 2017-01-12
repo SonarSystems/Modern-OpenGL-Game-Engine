@@ -36,9 +36,10 @@ namespace SonarGameEngine
         void SetKeyStatus( int key, int keyStatus );
         
         bool CheckMouseButtonStatus( int button, int buttonStatus );
-        
         void SetMouseButtonStatus( int button, int buttonStatus );
 
+        const vec2<float>& GetScrollOffset( ) const;
+        void SetScrollOffset( float x, float y );
         
     private:
         CoreEvents( );
@@ -56,9 +57,11 @@ namespace SonarGameEngine
         // has a key been pressed or released (reset the value of this key once checked)
         int keyboardStatus;
         int mouseStatus;
+        int scrollStatus;
         
         int keysStatus[101];
         int mouseButtonsStatus[3];
+        vec2<float> scrollOffset;
         
         int GetKeyNumber( int key ) override;
         int GetMouseButtonNumber( int button ) override;

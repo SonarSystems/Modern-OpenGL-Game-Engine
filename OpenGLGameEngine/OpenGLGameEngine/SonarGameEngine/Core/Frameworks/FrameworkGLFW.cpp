@@ -73,6 +73,10 @@ namespace SonarGameEngine
         }
         
         glfwSetKeyCallback( window, KeyCallback );
+        glfwSetMouseButtonCallback( window, MouseButtonCallback );
+        glfwSetScrollCallback( window, MouseScrollCallback );
+        
+        glfwSetInputMode( window, GLFW_STICKY_MOUSE_BUTTONS, 1 );
         
         glfwSwapInterval( vsync );
         
@@ -108,17 +112,37 @@ namespace SonarGameEngine
     {
         CoreEvents *tempEventsObject = CoreEvents::getInstance( );
         
-        
         if ( GLFW_PRESS == action )
         {
-            tempEventsObject->SetKeyboardStatus( KEYSTATUS::PRESSED );
-            tempEventsObject->SetKeyStatus( key, KEYSTATUS::PRESSED );
+            tempEventsObject->SetKeyboardStatus( KEYSTATUS::KB_PRESSED );
+            tempEventsObject->SetKeyStatus( key, KEYSTATUS::KB_PRESSED );
         }
         else if ( GLFW_RELEASE == action )
         {
-            tempEventsObject->SetKeyboardStatus( KEYSTATUS::RELEASED );
-            tempEventsObject->SetKeyStatus( key, KEYSTATUS::RELEASED );
+            tempEventsObject->SetKeyboardStatus( KEYSTATUS::KB_RELEASED );
+            tempEventsObject->SetKeyStatus( key, KEYSTATUS::KB_RELEASED );
         }
+    }
+    
+    void FrameworkGLFW::MouseButtonCallback( GLFWwindow *window, int button, int action, int mods )
+    {
+        CoreEvents *tempEventsObject = CoreEvents::getInstance( );
+        
+        if ( GLFW_PRESS == action )
+        {
+            tempEventsObject->SetMouseButtonStatus( button, MOUSE_BUTTON_STATUS::MOUSEKEY_PRESSED );
+        }
+        else if ( GLFW_REPEAT == action )
+        {
+            tempEventsObject->SetMouseButtonStatus( button, MOUSE_BUTTON_STATUS::MOUSEKEY_RELEASED );
+        }
+    }
+    
+    void FrameworkGLFW::MouseScrollCallback( GLFWwindow *window, double xoffset, double yoffset )
+    {
+        CoreEvents *tempEventsObject = CoreEvents::getInstance( );
+        
+        tempEventsObject->SetScrollOffset( xoffset, yoffset );
     }
 }
 #endif
