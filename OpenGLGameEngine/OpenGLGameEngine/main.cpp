@@ -29,7 +29,7 @@ int main( int argc, char *argv[] )
             std::cout << "Mouse Pressed" << std::endl;
         }
         
-        std::cout << ce.getEvents()->GetScrollOffset( ).x << " : " << ce.getEvents()->GetScrollOffset( ).y << std::endl;
+        std::cout << ce.getEvents()->GetMousePosition( ).x << " : " << ce.getEvents()->GetMousePosition( ).y << std::endl;
         
         //std::cout << ce.getCoreSettings()->GetWindowTitle() << std::endl;
         ce.GameLoop( );

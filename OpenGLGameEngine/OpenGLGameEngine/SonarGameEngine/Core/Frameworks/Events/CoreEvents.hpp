@@ -41,6 +41,9 @@ namespace SonarGameEngine
         const vec2<float>& GetScrollOffset( ) const;
         void SetScrollOffset( float x, float y );
         
+        const vec2<float>& GetMousePosition( ) const;
+        void SetMousePosition( float x, float y );
+        
     private:
         CoreEvents( );
         
@@ -62,6 +65,7 @@ namespace SonarGameEngine
         int keysStatus[101];
         int mouseButtonsStatus[3];
         vec2<float> scrollOffset;
+        vec2<float> mousePosition;
         
         int GetKeyNumber( int key ) override;
         int GetMouseButtonNumber( int button ) override;

@@ -78,6 +78,8 @@ namespace SonarGameEngine
     {
         if ( SDL_PollEvent( &this->windowEvent ) )
         {
+            int x = 0, y = 0;
+            
             switch( windowEvent.type ){
                     /* Keyboard event */
                     /* Pass the event data onto PrintKeyInfo() */
@@ -94,17 +96,29 @@ namespace SonarGameEngine
                     break;
                     
                 case SDL_MOUSEBUTTONDOWN:
+                    SDL_GetMouseState( &x, &y );
+                    this->coreEvents->SetMousePosition( x, y );
                     this->coreEvents->SetMouseButtonStatus( windowEvent.button.button, MOUSE_BUTTON_STATUS::MOUSEKEY_PRESSED );
                     
                     break;
                     
                 case SDL_MOUSEBUTTONUP:
+                    SDL_GetMouseState( &x, &y );
+                    this->coreEvents->SetMousePosition( x, y );
                     this->coreEvents->SetMouseButtonStatus( windowEvent.button.button, MOUSE_BUTTON_STATUS::MOUSEKEY_RELEASED );
                     
                     break;
                     
                 case SDL_MOUSEWHEEL:
+                    SDL_GetMouseState( &x, &y );
+                    this->coreEvents->SetMousePosition( x, y );
                     this->coreEvents->SetScrollOffset( windowEvent.wheel.x, windowEvent.wheel.y );
+                    
+                    break;
+                    
+                case SDL_MOUSEMOTION:
+                    SDL_GetMouseState( &x, &y );
+                    this->coreEvents->SetMousePosition( x, y );
                     
                     break;
                     

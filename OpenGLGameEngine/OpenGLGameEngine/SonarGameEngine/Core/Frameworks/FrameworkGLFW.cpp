@@ -75,6 +75,7 @@ namespace SonarGameEngine
         glfwSetKeyCallback( window, KeyCallback );
         glfwSetMouseButtonCallback( window, MouseButtonCallback );
         glfwSetScrollCallback( window, MouseScrollCallback );
+        glfwSetCursorPosCallback( window, CursorCallback );
         
         glfwSetInputMode( window, GLFW_STICKY_MOUSE_BUTTONS, 1 );
         
@@ -136,6 +137,11 @@ namespace SonarGameEngine
         {
             tempEventsObject->SetMouseButtonStatus( button, MOUSE_BUTTON_STATUS::MOUSEKEY_RELEASED );
         }
+        
+        double xPos, yPos;
+        glfwGetCursorPos( window, &xPos, &yPos );
+        
+        tempEventsObject->SetMousePosition( xPos, yPos );
     }
     
     void FrameworkGLFW::MouseScrollCallback( GLFWwindow *window, double xoffset, double yoffset )
@@ -143,6 +149,18 @@ namespace SonarGameEngine
         CoreEvents *tempEventsObject = CoreEvents::getInstance( );
         
         tempEventsObject->SetScrollOffset( xoffset, yoffset );
+        
+        double xPos, yPos;
+        glfwGetCursorPos( window, &xPos, &yPos );
+        
+        tempEventsObject->SetMousePosition( xPos, yPos );
+    }
+    
+    void FrameworkGLFW::CursorCallback( GLFWwindow *window, double xpos, double ypos )
+    {
+        CoreEvents *tempEventsObject = CoreEvents::getInstance( );
+        
+        tempEventsObject->SetMousePosition( xpos, ypos );
     }
 }
 #endif

@@ -35,6 +35,7 @@ namespace SonarGameEngine
         this->mouseStatus = MOUSE_STATUS::MOUSE_NOTHING;
         
         this->scrollOffset = vec2<float> { 0.0f, 0.0f };
+        this->mousePosition = vec2<float> { 0.0f, 0.0f };
     }
     
     bool CoreEvents::CheckKeyboardStatus( int keyStatus )
@@ -128,5 +129,15 @@ namespace SonarGameEngine
     void CoreEvents::SetScrollOffset( float x, float y )
     {
         this->scrollOffset = vec2<float> { x, y };
+    }
+    
+    const vec2<float>& CoreEvents::GetMousePosition( ) const
+    {
+        return this->mousePosition;
+    }
+    
+    void CoreEvents::SetMousePosition( float x, float y )
+    {
+        this->mousePosition = vec2<float> { x, y };
     }
 }

@@ -14,6 +14,8 @@
 
 namespace SonarGameEngine
 {
+    int delta = 0;
+    
     FrameworkSFML::FrameworkSFML( )
     {
         
@@ -91,16 +93,12 @@ namespace SonarGameEngine
                     break;
                     
                 case sf::Event::MouseWheelMoved:
-                    if ( windowEvent.mouseWheelScroll.wheel == sf::Mouse::HorizontalWheel )
-                    {
-                        //std::cout << "X scroll" << std::endl;
-                        this->coreEvents->SetScrollOffset( windowEvent.mouseWheel.x, 0 );
-                    }
-                    else if ( windowEvent.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel )
-                    {
-                        //std::cout << "Y scroll" << std::endl;
-                        //this->coreEvents->SetScrollOffset( 0, windowEvent.mouseWheel.delta );
-                    }
+                    this->coreEvents->SetScrollOffset( 0, windowEvent.mouseWheel.delta );
+                    
+                    break;
+                    
+                case sf::Event::MouseMoved:
+                    this->coreEvents->SetMousePosition( windowEvent.mouseMove.x, windowEvent.mouseMove.y );
                     
                     break;
             }
