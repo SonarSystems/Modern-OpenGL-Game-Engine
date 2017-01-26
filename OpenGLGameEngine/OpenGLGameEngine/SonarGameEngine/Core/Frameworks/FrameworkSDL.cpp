@@ -76,11 +76,22 @@ namespace SonarGameEngine
     
     void FrameworkSDL::PollEvents( )
     {
+        if ( coreEvents->IsSettingTime( ) )
+        {
+//            glfwSetTime( coreEvents->GetTime( ) );
+            coreEvents->StopSettingTime( );
+        }
+        else
+        {
+            coreEvents->SetTime( SDL_GetTicks( ) );
+        }
+        
         if ( SDL_PollEvent( &this->windowEvent ) )
         {
             int x = 0, y = 0;
             
-            switch( windowEvent.type ){
+            switch( windowEvent.type )
+            {
                     /* Keyboard event */
                     /* Pass the event data onto PrintKeyInfo() */
                 case SDL_KEYDOWN:
@@ -119,6 +130,22 @@ namespace SonarGameEngine
                 case SDL_MOUSEMOTION:
                     SDL_GetMouseState( &x, &y );
                     this->coreEvents->SetMousePosition( x, y );
+                    
+                    break;
+                    
+                case SDL_WINDOWEVENT:
+                    switch ( windowEvent.window.event )
+                    {
+                    case SDL_WINDOWEVENT_ENTER:
+                        this->coreEvents->SetMouseCursorInWindow( true );
+                        
+                        break;
+                        
+                    case SDL_WINDOWEVENT_LEAVE:
+                        this->coreEvents->SetMouseCursorInWindow( false );
+                        
+                        break;
+                    }
                     
                     break;
                     

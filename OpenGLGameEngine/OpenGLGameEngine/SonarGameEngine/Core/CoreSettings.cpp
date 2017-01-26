@@ -19,6 +19,7 @@
 #define SGE_DEF_ANTI_ALIASING 0
 #define SGE_DEF_WINDOW_TITLE "Default Window Title"
 #define SGE_DEF_V_SYNC GL_FALSE
+#define SGE_DEF_CURSOR_VISIBLE GL_TRUE
 
 namespace SonarGameEngine
 {
@@ -44,6 +45,8 @@ namespace SonarGameEngine
         this->windowTitle = SGE_DEF_WINDOW_TITLE;
         
         this->isVSync = SGE_DEF_V_SYNC;
+        
+        this->isMouseCursorVisible = SGE_DEF_CURSOR_VISIBLE;
     }
     
     /**********************************************************************************************************************
@@ -245,5 +248,21 @@ namespace SonarGameEngine
     }
     /**********************************************************************************************************************
      ***************************************** END VSYNC GETTERS AND SETTERS **********************************************
+     **********************************************************************************************************************/
+    
+    /**********************************************************************************************************************
+     ******************************* START MOUSE CURSOR VISIBILITY GETTERS AND SETTERS ************************************
+     **********************************************************************************************************************/
+    void CoreSettings::SetMouseCursorVisibility( GLboolean isVisible )
+    {
+        this->isMouseCursorVisible = isVisible;
+    }
+    
+    GLboolean CoreSettings::GetMouseCursorVisibility( ) const
+    {
+        return this->isMouseCursorVisible;
+    }
+    /**********************************************************************************************************************
+     ******************************** END MOUSE CURSOR VISIBILITY GETTERS AND SETTERS *************************************
      **********************************************************************************************************************/
 }

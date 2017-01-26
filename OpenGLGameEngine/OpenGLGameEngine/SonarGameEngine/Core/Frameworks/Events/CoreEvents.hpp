@@ -44,6 +44,15 @@ namespace SonarGameEngine
         const vec2<float>& GetMousePosition( ) const;
         void SetMousePosition( float x, float y );
         
+        bool IsMouseCursorInWindow( );
+        void SetMouseCursorInWindow( bool isInWindow );
+        
+        double GetTime( );
+        void SetTime( double time );
+        
+        bool IsSettingTime( );
+        void StopSettingTime( );
+        
     private:
         CoreEvents( );
         
@@ -66,6 +75,10 @@ namespace SonarGameEngine
         int mouseButtonsStatus[3];
         vec2<float> scrollOffset;
         vec2<float> mousePosition;
+        bool isInWindow;
+        
+        double time;
+        bool isSettingTime;
         
         int GetKeyNumber( int key ) override;
         int GetMouseButtonNumber( int button ) override;

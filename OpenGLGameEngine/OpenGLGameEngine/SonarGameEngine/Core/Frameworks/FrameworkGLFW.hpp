@@ -39,6 +39,7 @@ namespace SonarGameEngine
         static void MouseButtonCallback( GLFWwindow *window, int button, int action, int mods );
         static void MouseScrollCallback( GLFWwindow *window, double xoffset, double yoffset );
         static void CursorCallback( GLFWwindow *window, double xpos, double ypos );
+        static void CursorEnterWindowCallback( GLFWwindow *window, int entered );
         
     private:
         GLFWwindow *window;

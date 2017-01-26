@@ -56,8 +56,6 @@ namespace SonarGameEngine
         // Create a GLFWwindow object that we can use for GLFW's functions
         this->window = glfwCreateWindow( coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), coreSettings->GetWindowTitle( ).c_str( ), fullscreen, nullptr );
         
-        
-        
         int scaledWidth, scaledHeight;
         glfwGetFramebufferSize( window, &scaledWidth, &scaledHeight );
         
@@ -76,6 +74,7 @@ namespace SonarGameEngine
         glfwSetMouseButtonCallback( window, MouseButtonCallback );
         glfwSetScrollCallback( window, MouseScrollCallback );
         glfwSetCursorPosCallback( window, CursorCallback );
+        glfwSetCursorEnterCallback( window, CursorEnterWindowCallback );
         
         glfwSetInputMode( window, GLFW_STICKY_MOUSE_BUTTONS, 1 );
         
@@ -86,6 +85,16 @@ namespace SonarGameEngine
     
     void FrameworkGLFW::PollEvents( )
     {
+        if ( coreEvents->IsSettingTime( ) )
+        {
+            glfwSetTime( coreEvents->GetTime( ) );
+            coreEvents->StopSettingTime( );
+        }
+        else
+        {
+            coreEvents->SetTime( glfwGetTime( ) );
+        }
+        
         glfwPollEvents( );
     }
     
@@ -161,6 +170,20 @@ namespace SonarGameEngine
         CoreEvents *tempEventsObject = CoreEvents::getInstance( );
         
         tempEventsObject->SetMousePosition( xpos, ypos );
+    }
+    
+    void FrameworkGLFW::CursorEnterWindowCallback( GLFWwindow *window, int entered )
+    {
+        CoreEvents *tempEventsObject = CoreEvents::getInstance( );
+        
+        if ( entered )
+        {
+            tempEventsObject->SetMouseCursorInWindow( true );
+        }
+        else
+        {
+            tempEventsObject->SetMouseCursorInWindow( false );
+        }
     }
 }
 #endif

@@ -2,16 +2,6 @@
 
 #include <iostream>
 
-/*
- if ( ce.getEvents().Keyboard().Pressed( ) )
- {
- if ( ce.getEvents().Keyboard().Key() == 'A' )
- {
- 
- }
- }
- */
-
 namespace SonarGameEngine
 {
     CoreEvents *CoreEvents::sInstance = nullptr;
@@ -36,6 +26,10 @@ namespace SonarGameEngine
         
         this->scrollOffset = vec2<float> { 0.0f, 0.0f };
         this->mousePosition = vec2<float> { 0.0f, 0.0f };
+        
+        this->isInWindow = false;
+        
+        this->time = 0;
     }
     
     bool CoreEvents::CheckKeyboardStatus( int keyStatus )
@@ -139,5 +133,36 @@ namespace SonarGameEngine
     void CoreEvents::SetMousePosition( float x, float y )
     {
         this->mousePosition = vec2<float> { x, y };
+    }
+    
+    bool CoreEvents::IsMouseCursorInWindow( )
+    {
+        return this->isInWindow;
+    }
+    
+    void CoreEvents::SetMouseCursorInWindow( bool isInWindow )
+    {
+        this->isInWindow = isInWindow;
+    }
+    
+    double CoreEvents::GetTime( )
+    {
+        return this->time;
+    }
+    
+    void CoreEvents::SetTime( double time )
+    {
+        this->time = time;
+        this->isSettingTime = true;
+    }
+    
+    bool CoreEvents::IsSettingTime( )
+    {
+        return isSettingTime;
+    }
+    
+    void CoreEvents::StopSettingTime( )
+    {
+        isSettingTime = false;
     }
 }

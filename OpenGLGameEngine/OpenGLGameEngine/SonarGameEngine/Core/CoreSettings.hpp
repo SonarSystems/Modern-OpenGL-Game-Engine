@@ -193,6 +193,17 @@ namespace SonarGameEngine
          */
         GLboolean GetVSync( ) const;
         
+        /**
+         * sets mouse cursor visibility (on or off)
+         * @param isVisible is whether or not the mouse cursor is visible
+         */
+        void SetMouseCursorVisibility( GLboolean isVisible );
+        
+        /**
+         * check if the mouse cursor is visible
+         */
+        GLboolean GetMouseCursorVisibility( ) const;
+        
     private:
         CoreSettings( );
         
@@ -223,6 +234,8 @@ namespace SonarGameEngine
         std::string windowTitle;
         // is vsync enabled
         GLboolean isVSync;
+        // is mouse cursor visible
+        GLboolean isMouseCursorVisible;
         
     };
 }

@@ -16,12 +16,13 @@ int main( int argc, char *argv[] )
         {
             if (ce.getEvents( )->CheckKeyStatus( KEYSTATUS::KB_PRESSED, KEYS::Up ) )
             {
-                std::cout << "A pressed" << std::endl;
+                //std::cout << "A pressed" << std::endl;
+                ce.getEvents( )->SetTime(100);
             }
         }
         else if ( ce.getEvents( )->CheckKeyboardStatus( KEYSTATUS::KB_RELEASED ) )
         {
-            std::cout << "Release" << std::endl;
+            //std::cout << "Release" << std::endl;
         }
         
         if ( ce.getEvents()->CheckMouseButtonStatus( MOUSE_BUTTONS::MOUSEKEY_ANY, MOUSE_BUTTON_STATUS::MOUSEKEY_PRESSED ) )
@@ -29,7 +30,7 @@ int main( int argc, char *argv[] )
             std::cout << "Mouse Pressed" << std::endl;
         }
         
-        std::cout << ce.getEvents()->GetMousePosition( ).x << " : " << ce.getEvents()->GetMousePosition( ).y << std::endl;
+        std::cout << ce.getEvents()->GetTime( ) << std::endl;
         
         //std::cout << ce.getCoreSettings()->GetWindowTitle() << std::endl;
         ce.GameLoop( );

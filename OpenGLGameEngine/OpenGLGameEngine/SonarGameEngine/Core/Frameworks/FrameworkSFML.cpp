@@ -49,6 +49,8 @@ namespace SonarGameEngine
         this->window = new sf::Window(sf::VideoMode(coreSettings->GetWindowWidth(), coreSettings->GetWindowHeight(), 32), coreSettings->GetWindowTitle( ).c_str( ), sf::Style::Titlebar | sf::Style::Close | windowResizable | windowFullscreen, settings);
         
         window->setVerticalSyncEnabled( coreSettings->GetVSync( ) == GL_TRUE );
+        
+        window->setMouseCursorVisible( coreSettings->GetMouseCursorVisibility( ) );
     }
     
     void FrameworkSFML::PollEvents( )
@@ -99,6 +101,16 @@ namespace SonarGameEngine
                     
                 case sf::Event::MouseMoved:
                     this->coreEvents->SetMousePosition( windowEvent.mouseMove.x, windowEvent.mouseMove.y );
+                    
+                    break;
+                    
+                case sf::Event::MouseEntered:
+                    this->coreEvents->SetMouseCursorInWindow( true );
+                    
+                    break;
+                    
+                case sf::Event::MouseLeft:
+                    this->coreEvents->SetMouseCursorInWindow( false );
                     
                     break;
             }
