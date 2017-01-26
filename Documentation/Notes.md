@@ -1,3 +1,3 @@
-Mouse events - Cursor Enter/Leave window and Change Cursor<br />
+Mouse events - Change Cursor<br />
 
 Time<br />
