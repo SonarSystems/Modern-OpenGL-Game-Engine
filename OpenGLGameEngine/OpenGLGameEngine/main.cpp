@@ -17,17 +17,18 @@ int main( int argc, char *argv[] )
             if (ce.getEvents( )->CheckKeyStatus( KEYSTATUS::KB_PRESSED, KEYS::Up ) )
             {
                 //std::cout << "A pressed" << std::endl;
-                ce.getEvents( )->SetTime(100);
+                
             }
         }
         else if ( ce.getEvents( )->CheckKeyboardStatus( KEYSTATUS::KB_RELEASED ) )
         {
             //std::cout << "Release" << std::endl;
+            
         }
         
         if ( ce.getEvents()->CheckMouseButtonStatus( MOUSE_BUTTONS::MOUSEKEY_ANY, MOUSE_BUTTON_STATUS::MOUSEKEY_PRESSED ) )
         {
-            std::cout << "Mouse Pressed" << std::endl;
+            ce.getEvents( )->SetTime( 100, false );
         }
         
         std::cout << ce.getEvents()->GetTime( ) << std::endl;

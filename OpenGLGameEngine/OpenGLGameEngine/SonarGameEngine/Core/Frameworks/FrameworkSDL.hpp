@@ -42,6 +42,8 @@ namespace SonarGameEngine
         SDL_Event windowEvent;
         
         bool isOpen;
+        
+        Uint64 startingTime;
     };
 }
 

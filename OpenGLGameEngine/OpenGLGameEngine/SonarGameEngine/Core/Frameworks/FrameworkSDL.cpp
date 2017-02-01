@@ -53,6 +53,8 @@ namespace SonarGameEngine
         
         SDL_Init( SDL_INIT_EVERYTHING );
         
+        startingTime = 0;
+        
         SDL_GL_SetAttribute( SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE );
         SDL_GL_SetAttribute( SDL_GL_STENCIL_SIZE, coreSettings->GetStencilSize( ) );
         SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, coreSettings->GetOpenGLVersion( ).major );
@@ -76,14 +78,18 @@ namespace SonarGameEngine
     
     void FrameworkSDL::PollEvents( )
     {
-        if ( coreEvents->IsSettingTime( ) )
+        if ( coreEvents->IsExplicitlySettingTime( ) )
         {
 //            glfwSetTime( coreEvents->GetTime( ) );
+            startingTime = coreEvents->GetExplicitTime( );
+            //std::cout << coreEvents->GetExplicitTime( ) << std::endl;
             coreEvents->StopSettingTime( );
+            
         }
         else
         {
-            coreEvents->SetTime( SDL_GetTicks( ) );
+            coreEvents->SetCumulativeTime( SDL_GetTicks( ) );
+            coreEvents->SetTime( SDL_GetTicks( ) - startingTime );
         }
         
         if ( SDL_PollEvent( &this->windowEvent ) )

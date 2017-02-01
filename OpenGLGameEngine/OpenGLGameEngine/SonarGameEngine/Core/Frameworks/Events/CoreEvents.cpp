@@ -30,6 +30,11 @@ namespace SonarGameEngine
         this->isInWindow = false;
         
         this->time = 0;
+        this->explicitTime = 0;
+        this->cumulativeTime = 0;
+        
+        this->isSettingTime = false;
+        this->isExplicitlySettingTime = false;
     }
     
     bool CoreEvents::CheckKeyboardStatus( int keyStatus )
@@ -150,10 +155,35 @@ namespace SonarGameEngine
         return this->time;
     }
     
-    void CoreEvents::SetTime( double time )
+    double CoreEvents::GetExplicitTime( )
     {
+        return this->explicitTime;
+    }
+    
+    double CoreEvents::GetCumulativeTime( )
+    {
+        return this->cumulativeTime;
+    }
+    
+    void CoreEvents::SetTime( double time, bool isNormalSet )
+    {
+        if ( !isNormalSet )
+        {
+            this->isExplicitlySettingTime = true;
+            this->explicitTime = this->cumulativeTime + time;            
+        }
+        else
+        {
+            this->isExplicitlySettingTime = false;
+        }
+        
         this->time = time;
         this->isSettingTime = true;
+    }
+    
+    void CoreEvents::SetCumulativeTime( double time )
+    {
+        this->cumulativeTime = time;
     }
     
     bool CoreEvents::IsSettingTime( )
@@ -161,8 +191,14 @@ namespace SonarGameEngine
         return isSettingTime;
     }
     
+    bool CoreEvents::IsExplicitlySettingTime( )
+    {
+        return isExplicitlySettingTime;
+    }
+    
     void CoreEvents::StopSettingTime( )
     {
         isSettingTime = false;
+        isExplicitlySettingTime = false;
     }
 }

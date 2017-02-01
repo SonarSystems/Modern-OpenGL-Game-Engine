@@ -48,9 +48,13 @@ namespace SonarGameEngine
         void SetMouseCursorInWindow( bool isInWindow );
         
         double GetTime( );
-        void SetTime( double time );
+        double GetExplicitTime( );
+        double GetCumulativeTime( );
+        void SetTime( double time, bool isNormalSet = true );
+        void SetCumulativeTime( double time );
         
         bool IsSettingTime( );
+        bool IsExplicitlySettingTime( );
         void StopSettingTime( );
         
     private:
@@ -77,8 +81,8 @@ namespace SonarGameEngine
         vec2<float> mousePosition;
         bool isInWindow;
         
-        double time;
-        bool isSettingTime;
+        double time, explicitTime, cumulativeTime;
+        bool isSettingTime, isExplicitlySettingTime;
         
         int GetKeyNumber( int key ) override;
         int GetMouseButtonNumber( int button ) override;
