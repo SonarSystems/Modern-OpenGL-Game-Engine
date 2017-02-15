@@ -37,6 +37,11 @@ namespace SonarGameEngine
         
     private:
         sf::Window *window;
+        
+        sf::Clock clock;
+        
+        sf::Uint64 startingTime;
+        
     };
 }
 

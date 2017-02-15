@@ -201,4 +201,9 @@ namespace SonarGameEngine
         isSettingTime = false;
         isExplicitlySettingTime = false;
     }
+    
+    void CoreEvents::ResetTime( )
+    {
+        SetTime( 0, false );
+    }
 }

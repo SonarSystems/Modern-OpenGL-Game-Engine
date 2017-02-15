@@ -57,11 +57,16 @@ namespace SonarGameEngine
     {
         sf::Event windowEvent;
         
-        //sf::Event::TextEntered
-        //std::cout << sf::Keyboard::LBracket << std::endl;
-        
-        
-        
+        if ( coreEvents->IsExplicitlySettingTime( ) )
+        {
+            startingTime = coreEvents->GetExplicitTime( );
+            coreEvents->StopSettingTime( );
+        }
+        else
+        {
+            coreEvents->SetCumulativeTime( clock.getElapsedTime( ).asMilliseconds( ) );
+            coreEvents->SetTime( clock.getElapsedTime( ).asMilliseconds( ) - startingTime );
+        }
         
         while ( this->window->pollEvent( windowEvent ) )
         {

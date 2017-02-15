@@ -57,6 +57,8 @@ namespace SonarGameEngine
         bool IsExplicitlySettingTime( );
         void StopSettingTime( );
         
+        void ResetTime( );
+        
     private:
         CoreEvents( );
         

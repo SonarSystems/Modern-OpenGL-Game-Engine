@@ -80,11 +80,8 @@ namespace SonarGameEngine
     {
         if ( coreEvents->IsExplicitlySettingTime( ) )
         {
-//            glfwSetTime( coreEvents->GetTime( ) );
             startingTime = coreEvents->GetExplicitTime( );
-            //std::cout << coreEvents->GetExplicitTime( ) << std::endl;
             coreEvents->StopSettingTime( );
-            
         }
         else
         {
