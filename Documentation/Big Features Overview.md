@@ -1,8 +1,6 @@
 <h1>This is only a rough plan for features and it's in no particular order but feel free to suggest more features</h1>
 
-Input class (in progress)<br />
-
-Bring over GLHelper code and modernize it for Sonar Game Engine<br />
+Bring over GLHelper code and modernize it for Sonar Game Engine (in progress)<br />
 
 Texturing using SOIL<br />
 
