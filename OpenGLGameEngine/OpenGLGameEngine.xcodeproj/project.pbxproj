@@ -14,6 +14,13 @@
 		EE2794E71DBD668F004F12DB /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2794E61DBD668F004F12DB /* libSDL2-2.0.0.dylib */; };
 		EE2794EA1DBD66A0004F12DB /* libsfml-system.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2794E81DBD66A0004F12DB /* libsfml-system.2.4.0.dylib */; };
 		EE2794EB1DBD66A0004F12DB /* libsfml-window.2.4.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2794E91DBD66A0004F12DB /* libsfml-window.2.4.0.dylib */; };
+		EE47B42B1E548FB60058FF24 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE47B3151E548FB50058FF24 /* Object.cpp */; };
+		EE47B42E1E548FB60058FF24 /* GLHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE47B41C1E548FB60058FF24 /* GLHelper.cpp */; };
+		EE47B42F1E548FB60058FF24 /* Circle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE47B4211E548FB60058FF24 /* Circle.cpp */; };
+		EE47B4301E548FB60058FF24 /* Quad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE47B4231E548FB60058FF24 /* Quad.cpp */; };
+		EE47B4311E548FB60058FF24 /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE47B4251E548FB60058FF24 /* Triangle.cpp */; };
+		EE47B4321E548FB60058FF24 /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE47B4281E548FB60058FF24 /* Cube.cpp */; };
+		EE47B4371E54921B0058FF24 /* resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = EE47B4361E5492160058FF24 /* resources */; };
 		EEF512301DAD51310081A439 /* CoreEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEF5120E1DAD51310081A439 /* CoreEngine.cpp */; };
 		EEF512311DAD51310081A439 /* CoreSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEF512101DAD51310081A439 /* CoreSettings.cpp */; };
 		EEF512321DAD51310081A439 /* CoreFramework.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EEF512191DAD51310081A439 /* CoreFramework.cpp */; };
@@ -38,6 +45,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		EE47B4351E5492020058FF24 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				EE47B4371E54921B0058FF24 /* resources in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +67,22 @@
 		EE2794E61DBD668F004F12DB /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../../../usr/local/Cellar/sdl2/2.0.4/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
 		EE2794E81DBD66A0004F12DB /* libsfml-system.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-system.2.4.0.dylib"; path = "../../../../../../../usr/local/Cellar/sfml/2.4.0/lib/libsfml-system.2.4.0.dylib"; sourceTree = "<group>"; };
 		EE2794E91DBD66A0004F12DB /* libsfml-window.2.4.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-window.2.4.0.dylib"; path = "../../../../../../../usr/local/Cellar/sfml/2.4.0/lib/libsfml-window.2.4.0.dylib"; sourceTree = "<group>"; };
+		EE47B3151E548FB50058FF24 /* Object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
+		EE47B3161E548FB50058FF24 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		EE47B3181E548FB50058FF24 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
+		EE47B41C1E548FB60058FF24 /* GLHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLHelper.cpp; sourceTree = "<group>"; };
+		EE47B41D1E548FB60058FF24 /* GLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLHelper.h; sourceTree = "<group>"; };
+		EE47B4211E548FB60058FF24 /* Circle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Circle.cpp; sourceTree = "<group>"; };
+		EE47B4221E548FB60058FF24 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		EE47B4231E548FB60058FF24 /* Quad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Quad.cpp; sourceTree = "<group>"; };
+		EE47B4241E548FB60058FF24 /* Quad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quad.h; sourceTree = "<group>"; };
+		EE47B4251E548FB60058FF24 /* Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
+		EE47B4261E548FB60058FF24 /* Triangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
+		EE47B4281E548FB60058FF24 /* Cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cube.cpp; sourceTree = "<group>"; };
+		EE47B4291E548FB60058FF24 /* Cube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cube.h; sourceTree = "<group>"; };
+		EE47B42A1E548FB60058FF24 /* Shapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shapes.h; sourceTree = "<group>"; };
+		EE47B4341E5491190058FF24 /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		EE47B4361E5492160058FF24 /* resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
 		EED454AA1DB7E10E006260AD /* KEYBOARD DEFINITIONS.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "KEYBOARD DEFINITIONS.hpp"; sourceTree = "<group>"; };
 		EEF5120E1DAD51310081A439 /* CoreEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoreEngine.cpp; sourceTree = "<group>"; };
 		EEF5120F1DAD51310081A439 /* CoreEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CoreEngine.hpp; sourceTree = "<group>"; };
@@ -121,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				EEF5120C1DAD51310081A439 /* SonarGameEngine */,
+				EE47B4361E5492160058FF24 /* resources */,
 				EE141CB01D8D928F0013DFF2 /* main.cpp */,
 			);
 			path = OpenGLGameEngine;
@@ -139,9 +173,88 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE47AD861E548A7A0058FF24 /* ExternalLibs */ = {
+			isa = PBXGroup;
+			children = (
+				EE47B3131E548FB50058FF24 /* GLHelper */,
+			);
+			path = ExternalLibs;
+			sourceTree = "<group>";
+		};
+		EE47B3131E548FB50058FF24 /* GLHelper */ = {
+			isa = PBXGroup;
+			children = (
+				EE47B4341E5491190058FF24 /* Shader.h */,
+				EE47B3141E548FB50058FF24 /* Base */,
+				EE47B3171E548FB50058FF24 /* Defines */,
+				EE47B3191E548FB50058FF24 /* External */,
+				EE47B41C1E548FB60058FF24 /* GLHelper.cpp */,
+				EE47B41D1E548FB60058FF24 /* GLHelper.h */,
+				EE47B41F1E548FB60058FF24 /* Shapes */,
+			);
+			path = GLHelper;
+			sourceTree = "<group>";
+		};
+		EE47B3141E548FB50058FF24 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EE47B3151E548FB50058FF24 /* Object.cpp */,
+				EE47B3161E548FB50058FF24 /* Object.h */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		EE47B3171E548FB50058FF24 /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				EE47B3181E548FB50058FF24 /* Colours.h */,
+			);
+			path = Defines;
+			sourceTree = "<group>";
+		};
+		EE47B3191E548FB50058FF24 /* External */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		EE47B41F1E548FB60058FF24 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				EE47B4201E548FB60058FF24 /* 2D */,
+				EE47B4271E548FB60058FF24 /* 3D */,
+				EE47B42A1E548FB60058FF24 /* Shapes.h */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
+		EE47B4201E548FB60058FF24 /* 2D */ = {
+			isa = PBXGroup;
+			children = (
+				EE47B4211E548FB60058FF24 /* Circle.cpp */,
+				EE47B4221E548FB60058FF24 /* Circle.h */,
+				EE47B4231E548FB60058FF24 /* Quad.cpp */,
+				EE47B4241E548FB60058FF24 /* Quad.h */,
+				EE47B4251E548FB60058FF24 /* Triangle.cpp */,
+				EE47B4261E548FB60058FF24 /* Triangle.h */,
+			);
+			path = 2D;
+			sourceTree = "<group>";
+		};
+		EE47B4271E548FB60058FF24 /* 3D */ = {
+			isa = PBXGroup;
+			children = (
+				EE47B4281E548FB60058FF24 /* Cube.cpp */,
+				EE47B4291E548FB60058FF24 /* Cube.h */,
+			);
+			path = 3D;
+			sourceTree = "<group>";
+		};
 		EEF5120C1DAD51310081A439 /* SonarGameEngine */ = {
 			isa = PBXGroup;
 			children = (
+				EE47AD861E548A7A0058FF24 /* ExternalLibs */,
 				EEF5120D1DAD51310081A439 /* Core */,
 				EEF5122E1DAD51310081A439 /* DEFINITIONS.hpp */,
 				EEF5122F1DAD51310081A439 /* SonarGameEngine.hpp */,
@@ -228,6 +341,7 @@
 				EE141CA91D8D928F0013DFF2 /* Sources */,
 				EE141CAA1D8D928F0013DFF2 /* Frameworks */,
 				EE141CAB1D8D928F0013DFF2 /* CopyFiles */,
+				EE47B4351E5492020058FF24 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -276,13 +390,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEF512301DAD51310081A439 /* CoreEngine.cpp in Sources */,
+				EE47B42F1E548FB60058FF24 /* Circle.cpp in Sources */,
 				EEF512321DAD51310081A439 /* CoreFramework.cpp in Sources */,
+				EE47B4321E548FB60058FF24 /* Cube.cpp in Sources */,
+				EE47B4311E548FB60058FF24 /* Triangle.cpp in Sources */,
 				EEF512311DAD51310081A439 /* CoreSettings.cpp in Sources */,
 				EEF512331DAD51310081A439 /* CoreEvents.cpp in Sources */,
+				EE47B42B1E548FB60058FF24 /* Object.cpp in Sources */,
 				EEF512371DAD51310081A439 /* EventsSFML.cpp in Sources */,
 				EEF512341DAD51310081A439 /* EventsGLFW.cpp in Sources */,
 				EEF512381DAD51310081A439 /* FrameworkGLFW.cpp in Sources */,
 				EEF512351DAD51310081A439 /* EventsInterface.cpp in Sources */,
+				EE47B4301E548FB60058FF24 /* Quad.cpp in Sources */,
+				EE47B42E1E548FB60058FF24 /* GLHelper.cpp in Sources */,
 				EEF512361DAD51310081A439 /* EventsSDL.cpp in Sources */,
 				EEF512391DAD51310081A439 /* FrameworkInterface.cpp in Sources */,
 				EEF5123A1DAD51310081A439 /* FrameworkSDL.cpp in Sources */,

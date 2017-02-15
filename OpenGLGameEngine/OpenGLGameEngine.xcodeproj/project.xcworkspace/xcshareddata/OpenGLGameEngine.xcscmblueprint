@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1BDAB64BD88B4254FACCA4EC597B52AF344188D6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4BA643C55A5A9A6311882BA55C415E241F187DD6" : 9223372036854775807,
+    "1BDAB64BD88B4254FACCA4EC597B52AF344188D6" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5F1AD1DE-3119-493C-A6E5-0E83A9F7D920",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4BA643C55A5A9A6311882BA55C415E241F187DD6" : "Modern-OpenGL-Game-Engine\/OpenGLGameEngine\/OpenGLGameEngine\/SonarGameEngine\/ExternalLibs\/GLHelper\/",
+    "1BDAB64BD88B4254FACCA4EC597B52AF344188D6" : "Modern-OpenGL-Game-Engine\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "OpenGLGameEngine",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "OpenGLGameEngine\/OpenGLGameEngine.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SonarSystems\/Modern-OpenGL-Game-Engine.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1BDAB64BD88B4254FACCA4EC597B52AF344188D6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SonarSystems\/GLHelper.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4BA643C55A5A9A6311882BA55C415E241F187DD6"
+    }
+  ]
+}

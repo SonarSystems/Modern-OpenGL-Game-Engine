@@ -28,10 +28,8 @@ int main( int argc, char *argv[] )
         
         if ( ce.getEvents()->CheckMouseButtonStatus( MOUSE_BUTTONS::MOUSEKEY_ANY, MOUSE_BUTTON_STATUS::MOUSEKEY_PRESSED ) )
         {
-            ce.getEvents( )->ResetTime();
         }
         
-        std::cout << ce.getEvents()->GetTime( ) << std::endl;
         
         //std::cout << ce.getCoreSettings()->GetWindowTitle() << std::endl;
         ce.GameLoop( );

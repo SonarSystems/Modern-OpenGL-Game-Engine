@@ -60,7 +60,7 @@ namespace SonarGameEngine
         glfwGetFramebufferSize( window, &scaledWidth, &scaledHeight );
         
         coreSettings->SetScaledWindowWidth( scaledWidth );
-        coreSettings->SetScaledWindowWidth( scaledHeight );
+        coreSettings->SetScaledWindowHeight( scaledHeight );
         
         if ( nullptr == window )
         {

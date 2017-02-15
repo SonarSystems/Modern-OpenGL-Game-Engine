@@ -64,7 +64,7 @@ namespace SonarGameEngine
         SDL_GL_SetAttribute( SDL_GL_MULTISAMPLESAMPLES, coreSettings->GetAntiAliasing( ) );
         SDL_GL_SetSwapInterval( vsync );
         
-        this->window = SDL_CreateWindow( coreSettings->GetWindowTitle( ).c_str( ), 0, 0, coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), SDL_WINDOW_OPENGL | windowResizable | windowFullscreen );
+        this->window = SDL_CreateWindow( coreSettings->GetWindowTitle( ).c_str( ), 0, 0, coreSettings->GetWindowWidth( ), coreSettings->GetWindowHeight( ), SDL_WINDOW_ALLOW_HIGHDPI | windowResizable | windowFullscreen );
         
         int actualWidth, actualHeight;
         

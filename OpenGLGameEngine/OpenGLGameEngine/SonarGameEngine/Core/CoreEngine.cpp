@@ -10,6 +10,8 @@
 
 #include <iostream>
 
+#include "../ExternalLibs/GLHelper/GLHelper.h"
+
 namespace SonarGameEngine
 {
     CoreEngine::CoreEngine( )
@@ -56,6 +58,14 @@ namespace SonarGameEngine
         
         // draw OpenGL
 
+        
+        GLHelper::Shapes2D::Circle circle;
+        circle.SetRadius( 175 );
+        circle.SetColour(COLOUR_GREEN);
+        circle.SetWireframe(true);
+        circle.SetCenterPosition(300, 200, 0);
+        circle.Draw( );
+        
         
         coreFramework.SwapBuffers( );
     }
