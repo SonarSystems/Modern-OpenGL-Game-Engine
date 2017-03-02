@@ -8,13 +8,13 @@
 
 #include "CoreSettings.hpp"
 
-#define SGE_DEF_WINDOW_WIDTH 640
+#define SGE_DEF_WINDOW_WIDTH 1200
 #define SGE_DEF_WINDOW_HEIGHT 480
 #define SGE_DEF_WINDOW_DEPTH_SIZE 24
 #define SGE_DEF_WINDOW_STENCIL_SIZE 8
 #define SGE_DEF_OPENGL_MAJOR_VERSION 3
 #define SGE_DEF_OPENGL_MINOR_VERSION 3
-#define SGE_DEF_IS_WINDOW_RESIZABLE GL_FALSE
+#define SGE_DEF_IS_WINDOW_RESIZABLE GL_TRUE
 #define SGE_DEF_IS_WINDOW_FULLSCREEN GL_FALSE
 #define SGE_DEF_ANTI_ALIASING 0
 #define SGE_DEF_WINDOW_TITLE "Default Window Title"
@@ -47,6 +47,8 @@ namespace SonarGameEngine
         this->isVSync = SGE_DEF_V_SYNC;
         
         this->isMouseCursorVisible = SGE_DEF_CURSOR_VISIBLE;
+        
+        camera = new Camera( glm::vec3( 0.0f, 0.0f, 3.0f ) );
     }
     
     /**********************************************************************************************************************
@@ -265,4 +267,9 @@ namespace SonarGameEngine
     /**********************************************************************************************************************
      ******************************** END MOUSE CURSOR VISIBILITY GETTERS AND SETTERS *************************************
      **********************************************************************************************************************/
+    
+    Camera *CoreSettings::GetCamera( )
+    {
+        return camera;
+    }
 }

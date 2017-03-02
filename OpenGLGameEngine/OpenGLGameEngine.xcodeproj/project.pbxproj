@@ -84,6 +84,7 @@
 		EE47B4341E5491190058FF24 /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		EE47B4361E5492160058FF24 /* resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
 		EED454AA1DB7E10E006260AD /* KEYBOARD DEFINITIONS.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = "KEYBOARD DEFINITIONS.hpp"; sourceTree = "<group>"; };
+		EEEC509D1E685F150099AE00 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
 		EEF5120E1DAD51310081A439 /* CoreEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoreEngine.cpp; sourceTree = "<group>"; };
 		EEF5120F1DAD51310081A439 /* CoreEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CoreEngine.hpp; sourceTree = "<group>"; };
 		EEF512101DAD51310081A439 /* CoreSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CoreSettings.cpp; sourceTree = "<group>"; };
@@ -271,6 +272,7 @@
 				EEF512111DAD51310081A439 /* CoreSettings.hpp */,
 				EEF512121DAD51310081A439 /* Foundations */,
 				EEF512181DAD51310081A439 /* Frameworks */,
+				EEEC509D1E685F150099AE00 /* Camera.h */,
 			);
 			path = Core;
 			sourceTree = "<group>";

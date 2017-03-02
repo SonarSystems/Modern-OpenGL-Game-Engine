@@ -15,6 +15,8 @@
 
 #include <string>
 
+#include "Camera.h"
+
 namespace SonarGameEngine
 {
     class CoreSettings
@@ -204,6 +206,8 @@ namespace SonarGameEngine
          */
         GLboolean GetMouseCursorVisibility( ) const;
         
+        Camera *GetCamera( );
+        
     private:
         CoreSettings( );
         
@@ -236,6 +240,8 @@ namespace SonarGameEngine
         GLboolean isVSync;
         // is mouse cursor visible
         GLboolean isMouseCursorVisible;
+        
+        Camera *camera;
         
     };
 }

@@ -35,6 +35,7 @@ namespace SonarGameEngine
         
         // Define the viewport dimensions
         glViewport( 0, 0, coreSettings->GetScaledWindowWidth( ), coreSettings->GetScaledWindowHeight( ) );
+        projection = glm::perspective( 45.0f, ( float )coreSettings->GetWindowWidth( )/( float )coreSettings->GetWindowHeight( ), 0.1f, 1000.0f );
         
         if ( coreSettings->GetAntiAliasing( ) > 0 )
         {
@@ -57,15 +58,9 @@ namespace SonarGameEngine
         glClear( GL_COLOR_BUFFER_BIT );
         
         // draw OpenGL
-
-        
-        GLHelper::Shapes2D::Circle circle;
-        circle.SetRadius( 175 );
-        circle.SetColour(COLOUR_GREEN);
-        circle.SetWireframe(true);
-        circle.SetCenterPosition(300, 200, 0);
-        circle.Draw( );
-        
+        GLHelper::Shapes2D::Triangle triangle;
+        triangle.SetColour(COLOR_RED);
+        triangle.Draw( projection );
         
         coreFramework.SwapBuffers( );
     }

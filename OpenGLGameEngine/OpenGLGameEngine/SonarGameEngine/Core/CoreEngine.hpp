@@ -27,6 +27,10 @@
 #include "CoreSettings.hpp"
 #include "Frameworks/Events/CoreEvents.hpp"
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 namespace SonarGameEngine
 {
     class CoreEngine
@@ -54,5 +58,8 @@ namespace SonarGameEngine
         
         CoreSettings *coreSettings;
         CoreEvents *coreEvents;
+        
+        glm::mat4 projection;
+        
     };
 }
